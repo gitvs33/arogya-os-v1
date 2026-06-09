@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_BASE = import.meta.env.VITE_API_BASE || 'http://localhost:8000/api';
+const API_BASE = import.meta.env.VITE_API_BASE || '/api';
 
 const client = axios.create({
   baseURL: API_BASE,
@@ -10,25 +10,21 @@ const client = axios.create({
   },
 });
 
-// Add CSRF token if available
+// Attach auth token from sessionStorage to every request
 client.interceptors.request.use((config) => {
-  const csrf = document.cookie
-    .split('; ')
-    .find((row) => row.startsWith('csrftoken='))
-    ?.split('=')[1];
-  if (csrf) {
-    config.headers['X-CSRFToken'] = csrf;
+  const token = sessionStorage.getItem('medos_token');
+  if (token) {
+    config.headers['Authorization'] = `Token ${token}`;
   }
-  // Include credentials for session auth
-  config.withCredentials = true;
   return config;
 });
 
-// Handle 401/403 globally
+// Handle 401/403 globally — redirect to login if token expired
 client.interceptors.response.use(
   (response) => response,
   (error) => {
     if (error.response?.status === 401) {
+      sessionStorage.removeItem('medos_token');
       window.location.href = '/login';
     }
     return Promise.reject(error);

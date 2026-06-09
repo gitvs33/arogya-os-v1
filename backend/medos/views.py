@@ -1,11 +1,13 @@
 from datetime import date
+from django.contrib.auth import authenticate, login as django_login
 from django.db import transaction
 from django.db.models import Count, F, Q, Sum
 from django.utils import timezone
 from rest_framework import viewsets, status, generics
-from rest_framework.decorators import action
+from rest_framework.decorators import action, api_view, permission_classes
 from rest_framework.response import Response
-from rest_framework.permissions import IsAuthenticated
+from rest_framework.authtoken.models import Token
+from rest_framework.permissions import AllowAny, IsAuthenticated
 from django_filters.rest_framework import DjangoFilterBackend
 
 from .models import (
@@ -21,6 +23,30 @@ from .serializers import (
     InvoiceSerializer, InvoiceLineItemSerializer,
     MedicalAlertSerializer, DashboardStatsSerializer,
 )
+
+
+# ── Auth ──
+@api_view(['POST'])
+@permission_classes([AllowAny])
+def login_view(request):
+    """Session login — accepts JSON, returns user data + sets session cookie."""
+    username = request.data.get('username')
+    password = request.data.get('password')
+    user = authenticate(request, username=username, password=password)
+    if user is not None:
+        django_login(request, user)
+        token, _ = Token.objects.get_or_create(user=user)
+        return Response({
+            'id': user.id,
+            'username': user.username,
+            'email': user.email,
+            'is_staff': user.is_staff,
+            'token': token.key,
+        })
+    return Response(
+        {'error': 'Invalid username or password'},
+        status=status.HTTP_401_UNAUTHORIZED,
+    )
 
 
 class PatientViewSet(viewsets.ModelViewSet):

@@ -11,20 +11,23 @@ export default function Login() {
     e.preventDefault();
     setError('');
     try {
-      const response = await fetch('/api-auth/login/', {
+      const response = await fetch('/api/login/', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: new URLSearchParams({ username, password }),
-        credentials: 'include',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ username, password }),
       });
       if (response.ok) {
+        const data = await response.json();
+        // Store token for subsequent API calls
+        sessionStorage.setItem('medos_token', data.token);
+        sessionStorage.setItem('medos_user', JSON.stringify(data));
         navigate('/');
       } else {
-        setError('Invalid username or password');
+        const data = await response.json().catch(() => ({}));
+        setError(data.error || data.detail || 'Invalid username or password');
       }
-    } catch {
-      // Fallback: allow login for demo
-      navigate('/');
+    } catch (err) {
+      setError('Network error. Is the backend running?');
     }
   };
 
