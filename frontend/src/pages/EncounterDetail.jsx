@@ -1,7 +1,10 @@
-import { useState } from 'react';
+import { useState, useCallback } from 'react';
 import { useParams } from 'react-router-dom';
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
 import { encountersApi } from '../api/encounters';
+import { ddiApi } from '../api/ddi';
+import DrugAutocomplete from '../components/DrugAutocomplete';
+import DDIWarningModal from '../components/DDIWarningModal';
 
 export default function EncounterDetail() {
   const { id } = useParams();
@@ -10,6 +13,10 @@ export default function EncounterDetail() {
   const [showMedicationForm, setShowMedicationForm] = useState(false);
   const [showCompleteForm, setShowCompleteForm] = useState(false);
   const [error, setError] = useState('');
+  const [ddiInteractions, setDdiInteractions] = useState(null);
+  const [ddiLoading, setDdiLoading] = useState(false);
+  const [ddiMedicationData, setDdiMedicationData] = useState(null);
+  const [drugDdiMap, setDrugDdiMap] = useState({});
   const [activeTab, setActiveTab] = useState('details'); // 'details' | 'timeline'
 
   // Vitals form state
@@ -85,8 +92,82 @@ export default function EncounterDetail() {
 
   const handleMedicationSubmit = (e) => {
     e.preventDefault();
-    addMedicationMutation.mutate(medication);
+    // Collect all drug names from existing medications + the new one
+    const existingDrugs = (encounter.medications || []).map((m) => m.drug_name);
+    const allDrugs = [...new Set([...existingDrugs, medication.drug_name])];
+
+    if (allDrugs.length < 2) {
+      // No other drugs to check against, submit directly
+      addMedicationMutation.mutate(medication);
+      return;
+    }
+
+    setDdiLoading(true);
+    ddiApi
+      .check({ drugs: allDrugs })
+      .then((res) => {
+        const interactions = res.data?.interactions || [];
+        if (interactions.length > 0) {
+          setDdiInteractions(interactions);
+          setDdiMedicationData(medication);
+        } else {
+          addMedicationMutation.mutate(medication);
+        }
+      })
+      .catch(() => {
+        // If DDI check fails, proceed anyway
+        addMedicationMutation.mutate(medication);
+      })
+      .finally(() => setDdiLoading(false));
   };
+
+  const handleDDIProceed = () => {
+    if (ddiMedicationData) {
+      addMedicationMutation.mutate(ddiMedicationData, {
+        onSuccess: (res) => {
+          const addedMedId = res.data?.id;
+          if (addedMedId && ddiInteractions) {
+            setDrugDdiMap((prev) => ({
+              ...prev,
+              [addedMedId]: ddiInteractions,
+            }));
+          }
+        },
+      });
+    }
+    setDdiInteractions(null);
+    setDdiMedicationData(null);
+  };
+
+  const handleDDICancel = () => {
+    setDdiInteractions(null);
+    setDdiMedicationData(null);
+  };
+
+  const getInteractionIcons = useCallback(
+    (medId, drugName) => {
+      const interactions = drugDdiMap[medId];
+      if (!interactions || interactions.length === 0) return null;
+
+      const hasContraindicated = interactions.some((i) => i.severity === 'contraindicated');
+      const hasMajor = interactions.some((i) => i.severity === 'major');
+
+      const icon = hasContraindicated ? '🚫' : hasMajor ? '🔴' : '⚠️';
+      const severityLabel = hasContraindicated
+        ? 'Contraindicated'
+        : hasMajor
+        ? 'Major'
+        : 'Interaction';
+
+      // Build a human-readable summary of which drug combinations interact
+      const summary = interactions
+        .map((i) => `${i.drug_a} ↔ ${i.drug_b} (${i.severity})`)
+        .join('; ');
+
+      return { icon, label: `${severityLabel}: ${summary}` };
+    },
+    [drugDdiMap]
+  );
 
   const handleCompleteSubmit = (e) => {
     e.preventDefault();
@@ -138,6 +219,16 @@ export default function EncounterDetail() {
         <div className="bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded-lg mb-4 text-sm">
           {error}
         </div>
+      )}
+
+      {ddiInteractions && (
+        <DDIWarningModal
+          interactions={ddiInteractions}
+          drugName={ddiMedicationData?.drug_name}
+          onProceed={handleDDIProceed}
+          onCancel={handleDDICancel}
+          isPending={addMedicationMutation.isPending}
+        />
       )}
 
       {/* Tab bar */}
@@ -282,9 +373,11 @@ export default function EncounterDetail() {
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-4">
                   <div>
                     <label htmlFor="drug-name" className="block text-xs font-medium text-gray-600 mb-1">Drug Name</label>
-                    <input id="drug-name" type="text" value={medication.drug_name}
-                      onChange={(e) => setMedication((p) => ({ ...p, drug_name: e.target.value }))}
-                      className="w-full px-2 py-1.5 border border-gray-300 rounded text-sm focus:ring-2 focus:ring-blue-500 outline-none" />
+                    <DrugAutocomplete
+                      value={medication.drug_name}
+                      onChange={(val) => setMedication((p) => ({ ...p, drug_name: val }))}
+                      disabled={addMedicationMutation.isPending}
+                    />
                   </div>
                   <div>
                     <label htmlFor="dosage" className="block text-xs font-medium text-gray-600 mb-1">Dosage</label>
@@ -305,10 +398,27 @@ export default function EncounterDetail() {
                       className="w-full px-2 py-1.5 border border-gray-300 rounded text-sm focus:ring-2 focus:ring-blue-500 outline-none" />
                   </div>
                 </div>
-                <button type="submit" disabled={addMedicationMutation.isPending}
-                  className="bg-blue-600 text-white px-4 py-1.5 rounded text-sm hover:bg-blue-700 transition-colors disabled:opacity-50">
-                  {addMedicationMutation.isPending ? 'Adding...' : 'Add Medication'}
-                </button>
+                <div className="flex items-center gap-2">
+                  <button type="submit" disabled={addMedicationMutation.isPending || ddiLoading}
+                    className="bg-blue-600 text-white px-4 py-1.5 rounded text-sm hover:bg-blue-700 transition-colors disabled:opacity-50">
+                    {ddiLoading ? (
+                      <span className="flex items-center gap-2">
+                        <svg className="animate-spin h-4 w-4" viewBox="0 0 24 24">
+                          <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" fill="none" />
+                          <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z" />
+                        </svg>
+                        Checking interactions...
+                      </span>
+                    ) : (
+                      'Add Medication'
+                    )}
+                  </button>
+                  {drugDdiMap && Object.keys(drugDdiMap).length > 0 && (
+                    <span className="text-xs text-gray-400">
+                      DDI check enabled
+                    </span>
+                  )}
+                </div>
               </form>
             )}
 
@@ -322,24 +432,40 @@ export default function EncounterDetail() {
                     <th className="text-left px-3 py-2 font-medium text-gray-600">Frequency</th>
                     <th className="text-left px-3 py-2 font-medium text-gray-600">Duration</th>
                     <th className="text-left px-3 py-2 font-medium text-gray-600">Status</th>
+                    <th className="text-left px-3 py-2 font-medium text-gray-600">Interactions</th>
                   </tr>
                 </thead>
                 <tbody>
-                  {encounter.medications.map((m) => (
-                    <tr key={m.id} className="border-b border-gray-100">
-                      <td className="px-3 py-2 font-medium text-gray-900">{m.drug_name}</td>
-                      <td className="px-3 py-2 text-gray-600">{m.dosage}</td>
-                      <td className="px-3 py-2 text-gray-600">{m.frequency}</td>
-                      <td className="px-3 py-2 text-gray-600">{m.duration}</td>
-                      <td className="px-3 py-2">
-                        <span className={`inline-block px-2 py-0.5 rounded-full text-xs font-medium ${
-                          m.is_active ? 'bg-green-100 text-green-700' : 'bg-gray-100 text-gray-600'
-                        }`}>
-                          {m.is_active ? 'Active' : 'Inactive'}
-                        </span>
-                      </td>
-                    </tr>
-                  ))}
+                  {encounter.medications.map((m) => {
+                    const ddiInfo = getInteractionIcons(m.id, m.drug_name);
+                    return (
+                      <tr key={m.id} className="border-b border-gray-100">
+                        <td className="px-3 py-2 font-medium text-gray-900">{m.drug_name}</td>
+                        <td className="px-3 py-2 text-gray-600">{m.dosage}</td>
+                        <td className="px-3 py-2 text-gray-600">{m.frequency}</td>
+                        <td className="px-3 py-2 text-gray-600">{m.duration}</td>
+                        <td className="px-3 py-2">
+                          <span className={`inline-block px-2 py-0.5 rounded-full text-xs font-medium ${
+                            m.is_active ? 'bg-green-100 text-green-700' : 'bg-gray-100 text-gray-600'
+                          }`}>
+                            {m.is_active ? 'Active' : 'Inactive'}
+                          </span>
+                        </td>
+                        <td className="px-3 py-2">
+                          {ddiInfo ? (
+                            <span
+                              className="inline-flex items-center cursor-help text-sm"
+                              title={ddiInfo.label}
+                            >
+                              {ddiInfo.icon}
+                            </span>
+                          ) : (
+                            <span className="text-gray-300 text-xs">--</span>
+                          )}
+                        </td>
+                      </tr>
+                    );
+                  })}
                 </tbody>
               </table>
             ) : (
