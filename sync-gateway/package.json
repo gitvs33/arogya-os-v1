@@ -1,0 +1,21 @@
+{
+  "name": "medos-sync-gateway",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Y.js CRDT sync gateway for MedOS offline-first replication",
+  "type": "module",
+  "scripts": {
+    "start": "node src/gateway.js",
+    "dev": "node --watch src/gateway.js",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "ws": "^8.16.0",
+    "yjs": "^13.6.10",
+    "y-websocket": "^2.0.3",
+    "redis": "^4.6.12"
+  },
+  "devDependencies": {
+    "vitest": "^1.2.0"
+  }
+}
