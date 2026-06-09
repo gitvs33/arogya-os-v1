@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
 import { alertsApi } from '../api/alerts';
 
-const ALERT_TYPES = ['', 'ALLERGY', 'LAB_RESULT', 'VITAL_SIGN', 'MEDICATION', 'FALL_RISK'];
+const ALERT_TYPES = ['', 'VITALS', 'DDI', 'RISK', 'SYSTEM'];
 const SEVERITIES = ['', 'CRITICAL', 'WARNING', 'INFO'];
 const STATUSES = ['', 'ACTIVE', 'ACKNOWLEDGED', 'RESOLVED'];
 
@@ -100,7 +100,7 @@ export default function Alerts() {
     },
   });
 
-  const alerts = data?.data || [];
+  const alerts = data?.data?.results || [];
 
   if (isLoading) return <LoadingSpinner />;
   if (error) return <ErrorAlert message={error.message} />;

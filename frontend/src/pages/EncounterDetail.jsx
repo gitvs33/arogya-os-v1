@@ -17,7 +17,7 @@ export default function EncounterDetail() {
     diastolic_bp: '',
     heart_rate: '',
     temperature: '',
-    SpO2: '',
+    oxygen_saturation: '',
   });
 
   // Medication form state
@@ -47,7 +47,7 @@ export default function EncounterDetail() {
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ['encounter', id] });
       setShowVitalsForm(false);
-      setVitals({ systolic_bp: '', diastolic_bp: '', heart_rate: '', temperature: '', SpO2: '' });
+      setVitals({ systolic_bp: '', diastolic_bp: '', heart_rate: '', temperature: '', oxygen_saturation: '' });
     },
     onError: () => setError('Failed to save vitals.'),
   });
@@ -78,7 +78,7 @@ export default function EncounterDetail() {
       diastolic_bp: Number(vitals.diastolic_bp),
       heart_rate: Number(vitals.heart_rate),
       temperature: Number(vitals.temperature),
-      SpO2: Number(vitals.SpO2),
+      oxygen_saturation: Number(vitals.oxygen_saturation),
     });
   };
 
@@ -120,11 +120,11 @@ export default function EncounterDetail() {
         </div>
         <span
           className={`px-3 py-1 rounded-full text-sm font-medium ${
-            encounter.status === 'completed'
+            encounter.status === 'COMPLETED'
               ? 'bg-green-100 text-green-700'
-              : encounter.status === 'in-progress'
+              : encounter.status === 'IN_PROGRESS'
               ? 'bg-blue-100 text-blue-700'
-              : encounter.status === 'pending'
+              : encounter.status === 'PLANNED'
               ? 'bg-yellow-100 text-yellow-700'
               : 'bg-gray-100 text-gray-600'
           }`}
@@ -195,8 +195,8 @@ export default function EncounterDetail() {
               </div>
               <div>
                 <label htmlFor="spo2" className="block text-xs font-medium text-gray-600 mb-1">SpO2</label>
-                <input id="spo2" type="number" value={vitals.SpO2}
-                  onChange={(e) => setVitals((p) => ({ ...p, SpO2: e.target.value }))}
+                <input id="spo2" type="number" value={vitals.oxygen_saturation}
+                  onChange={(e) => setVitals((p) => ({ ...p, oxygen_saturation: e.target.value }))}
                   className="w-full px-2 py-1.5 border border-gray-300 rounded text-sm focus:ring-2 focus:ring-blue-500 outline-none" />
               </div>
             </div>
@@ -225,7 +225,7 @@ export default function EncounterDetail() {
                   <td className="px-3 py-2">{v.systolic_bp}/{v.diastolic_bp}</td>
                   <td className="px-3 py-2">{v.heart_rate} bpm</td>
                   <td className="px-3 py-2">{v.temperature}°F</td>
-                  <td className="px-3 py-2">{v.SpO2}%</td>
+                  <td className="px-3 py-2">{v.oxygen_saturation}%</td>
                   <td className="px-3 py-2 text-gray-500">{new Date(v.recorded_at).toLocaleString()}</td>
                 </tr>
               ))}
@@ -304,9 +304,9 @@ export default function EncounterDetail() {
                   <td className="px-3 py-2 text-gray-600">{m.duration}</td>
                   <td className="px-3 py-2">
                     <span className={`inline-block px-2 py-0.5 rounded-full text-xs font-medium ${
-                      m.status === 'active' ? 'bg-green-100 text-green-700' : 'bg-gray-100 text-gray-600'
+                      m.is_active ? 'bg-green-100 text-green-700' : 'bg-gray-100 text-gray-600'
                     }`}>
-                      {m.status}
+                      {m.is_active ? 'Active' : 'Inactive'}
                     </span>
                   </td>
                 </tr>
@@ -319,7 +319,7 @@ export default function EncounterDetail() {
       </div>
 
       {/* Complete Encounter Section */}
-      {encounter.status !== 'completed' && (
+      {encounter.status !== 'COMPLETED' && (
         <div className="bg-white rounded-lg border border-gray-200 p-6">
           {!showCompleteForm ? (
             <button

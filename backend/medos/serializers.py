@@ -143,11 +143,13 @@ class InvoiceSerializer(serializers.ModelSerializer):
 
 
 class MedicalAlertSerializer(serializers.ModelSerializer):
+    patient_name = serializers.CharField(source='patient.full_name', read_only=True)
+
     class Meta:
         model = MedicalAlert
         fields = [
             'id', 'alert_type', 'severity', 'status',
-            'patient', 'encounter', 'message', 'details',
+            'patient', 'patient_name', 'encounter', 'message', 'details',
             'created_at', 'acknowledged_at', 'acknowledged_by',
             'resolved_at',
         ]

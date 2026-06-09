@@ -189,9 +189,9 @@ export default function PatientDetail() {
                     <div
                       key={alert.id}
                       className={`p-4 rounded-lg border ${
-                        alert.severity === 'high'
+                        alert.severity === 'CRITICAL'
                           ? 'bg-red-50 border-red-200'
-                          : alert.severity === 'medium'
+                          : alert.severity === 'WARNING'
                           ? 'bg-yellow-50 border-yellow-200'
                           : 'bg-blue-50 border-blue-200'
                       }`}
@@ -200,9 +200,9 @@ export default function PatientDetail() {
                         <div>
                           <span
                             className={`inline-flex items-center px-2 py-0.5 rounded text-xs font-semibold uppercase tracking-wide ${
-                              alert.severity === 'high'
+                              alert.severity === 'CRITICAL'
                                 ? 'bg-red-100 text-red-700'
-                                : alert.severity === 'medium'
+                                : alert.severity === 'WARNING'
                                 ? 'bg-yellow-100 text-yellow-700'
                                 : 'bg-blue-100 text-blue-700'
                             }`}
@@ -212,7 +212,7 @@ export default function PatientDetail() {
                           <p className="mt-2 text-sm text-gray-700">{alert.message}</p>
                         </div>
                         <span className="text-xs text-gray-400 whitespace-nowrap">
-                          {alert.created_at}
+                          {new Date(alert.created_at).toLocaleDateString()}
                         </span>
                       </div>
                     </div>
@@ -243,17 +243,17 @@ export default function PatientDetail() {
                   <tbody className="divide-y divide-gray-200">
                     {(invoices || []).map((inv) => (
                       <tr key={inv.id} className="hover:bg-gray-50">
-                        <td className="px-4 py-3 text-blue-600 font-medium">{inv.invoice_no}</td>
-                        <td className="px-4 py-3 text-gray-700">{inv.date}</td>
+                        <td className="px-4 py-3 text-blue-600 font-medium">{inv.invoice_number}</td>
+                        <td className="px-4 py-3 text-gray-700">{inv.created_at?.slice(0, 10)}</td>
                         <td className="px-4 py-3 text-gray-700">
-                          ₹{inv.amount?.toLocaleString?.() || inv.amount}
+                          ₹{inv.total?.toLocaleString?.() || inv.total}
                         </td>
                         <td className="px-4 py-3">
                           <span
                             className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium capitalize ${
-                              inv.status === 'paid'
+                              inv.status === 'PAID'
                                 ? 'bg-green-50 text-green-700'
-                                : inv.status === 'pending'
+                                : inv.status === 'ISSUED'
                                 ? 'bg-yellow-50 text-yellow-700'
                                 : 'bg-gray-50 text-gray-600'
                             }`}

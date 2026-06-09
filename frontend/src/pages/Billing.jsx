@@ -97,12 +97,12 @@ export default function Billing() {
       {/* Header */}
       <div className="flex items-center justify-between">
         <h1 className="text-2xl font-bold text-gray-900">Billing</h1>
-        <Link
-          to="/billing/new"
-          className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors font-medium text-sm inline-flex items-center gap-1"
+        <span
+          className="bg-gray-400 text-white px-4 py-2 rounded-lg font-medium text-sm inline-flex items-center gap-1 cursor-not-allowed"
+          title="Create invoice via API (UI coming soon)"
         >
-          <span>+</span> New Invoice
-        </Link>
+          <span>+</span> New Invoice (via API)
+        </span>
       </div>
 
       {/* Filters */}
@@ -183,7 +183,7 @@ export default function Billing() {
                   </td>
                   <td className="px-4 py-3 text-sm text-gray-900 font-medium">
                     <Link
-                      to={`/patients/${invoice.patient_id}`}
+                      to={`/patients/${invoice.patient}`}
                       className="text-gray-900 hover:text-blue-600"
                     >
                       {invoice.patient_name}

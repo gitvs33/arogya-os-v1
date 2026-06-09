@@ -30,7 +30,7 @@ export default function NewEncounter() {
     enabled: shouldFetch,
   });
 
-  const patients = patientsData?.data || [];
+  const patients = patientsData?.data?.results || [];
 
   // Pre-select patient from URL parameter once patients are loaded
   useEffect(() => {
@@ -38,7 +38,7 @@ export default function NewEncounter() {
       const patient = patients.find((p) => String(p.id) === preselectedPatientId);
       if (patient) {
         setSelectedPatient(patient);
-        setSearch(patient.name);
+        setSearch(patient.full_name);
         setShowDropdown(false);
       }
       setInitialLoadDone(true);
@@ -65,7 +65,7 @@ export default function NewEncounter() {
     }
 
     createMutation.mutate({
-      patient_id: selectedPatient.id,
+      patient: selectedPatient.id,
       ...formData,
     });
   };
@@ -76,7 +76,7 @@ export default function NewEncounter() {
 
   const handlePatientSelect = (patient) => {
     setSelectedPatient(patient);
-    setSearch(patient.name);
+    setSearch(patient.full_name);
     setShowDropdown(false);
   };
 
@@ -121,14 +121,14 @@ export default function NewEncounter() {
                     selectedPatient?.id === patient.id ? 'bg-blue-50 text-blue-700' : 'text-gray-700'
                   }`}
                 >
-                  {patient.name} - {patient.phone}
+                  {patient.full_name} - {patient.phone}
                 </button>
               ))}
             </div>
           )}
           {selectedPatient && (
             <p className="mt-1 text-xs text-green-600">
-              Selected: {selectedPatient.name}
+              Selected: {selectedPatient.full_name}
             </p>
           )}
         </div>

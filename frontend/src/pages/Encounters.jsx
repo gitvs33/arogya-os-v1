@@ -4,7 +4,7 @@ import { useQuery } from '@tanstack/react-query';
 import { encountersApi } from '../api/encounters';
 
 const ENCOUNTER_TYPES = ['', 'OPD', 'IPD', 'EMERGENCY'];
-const STATUSES = ['', 'pending', 'in-progress', 'completed', 'cancelled'];
+const STATUSES = ['', 'PLANNED', 'IN_PROGRESS', 'COMPLETED', 'CANCELLED'];
 
 export default function Encounters() {
   const [search, setSearch] = useState('');
@@ -19,7 +19,7 @@ export default function Encounters() {
       encountersApi.list({ search, status: statusFilter, encounter_type: typeFilter }),
   });
 
-  const encounters = data?.data || [];
+  const encounters = data?.data?.results || [];
 
   if (isLoading) {
     return (
@@ -139,16 +139,16 @@ export default function Encounters() {
                   <td className="px-4 py-3 text-sm">
                     <span
                       className={`inline-block px-2 py-0.5 rounded-full text-xs font-medium ${
-                        encounter.status === 'completed'
+                        encounter.status === 'COMPLETED'
                           ? 'bg-green-100 text-green-700'
-                          : encounter.status === 'in-progress'
+                          : encounter.status === 'IN_PROGRESS'
                           ? 'bg-blue-100 text-blue-700'
-                          : encounter.status === 'pending'
+                          : encounter.status === 'PLANNED'
                           ? 'bg-yellow-100 text-yellow-700'
                           : 'bg-gray-100 text-gray-600'
                       }`}
                     >
-                      {encounter.status}
+                      {encounter.status.replace(/_/g, ' ')}
                     </span>
                   </td>
                   <td className="px-4 py-3 text-sm text-gray-600">{encounter.doctor}</td>
