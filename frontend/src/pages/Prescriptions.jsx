@@ -10,12 +10,12 @@ export default function Prescriptions() {
     queryFn: () => encountersApi.list({}),
   });
 
-  const encounters = data?.data || [];
-
   // Aggregate all medications from all encounters
   const prescriptions = useMemo(() => {
     const all = [];
-    encounters.forEach((encounter) => {
+    const responseData = data?.data || {};
+    const encs = Array.isArray(responseData) ? responseData : (responseData.results || []);
+    encs.forEach((encounter) => {
       if (encounter.medications && encounter.medications.length > 0) {
         encounter.medications.forEach((med) => {
           all.push({
@@ -27,7 +27,7 @@ export default function Prescriptions() {
       }
     });
     return all;
-  }, [encounters]);
+  }, [data?.data]);
 
   // Filter by patient name
   const filteredPrescriptions = useMemo(() => {

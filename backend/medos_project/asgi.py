@@ -1,16 +1,26 @@
 """
 ASGI config for medos_project project.
 
-It exposes the ASGI callable as a module-level variable named ``application``.
+Exposes both:
+- HTTP via Django's ASGIHandler
+- WebSocket via Django Channels ProtocolTypeRouter
 
-For more information on this file, see
-https://docs.djangoproject.com/en/6.0/howto/deployment/asgi/
+WebSocket routes are defined in ``medos.routing.websocket_urlpatterns``.
 """
-
 import os
 
+from channels.auth import AuthMiddlewareStack
+from channels.routing import ProtocolTypeRouter, URLRouter
 from django.core.asgi import get_asgi_application
 
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'medos_project.settings')
 
-application = get_asgi_application()
+# Import here AFTER settings are configured to avoid import-time side effects
+from medos.routing import websocket_urlpatterns  # noqa: E402
+
+application = ProtocolTypeRouter({
+    'http': get_asgi_application(),
+    'websocket': AuthMiddlewareStack(
+        URLRouter(websocket_urlpatterns)
+    ),
+})

@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { useParams, Link, useNavigate } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
 import { billingApi } from '../api/billing';
 
@@ -58,7 +58,6 @@ function ErrorAlert({ message }) {
 
 export default function InvoiceDetail() {
   const { id } = useParams();
-  const navigate = useNavigate();
   const queryClient = useQueryClient();
   const [showLineItemForm, setShowLineItemForm] = useState(false);
   const [lineItemForm, setLineItemForm] = useState({

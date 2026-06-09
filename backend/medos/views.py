@@ -1,5 +1,7 @@
 from datetime import date
+
 from django.contrib.auth import authenticate, login as django_login
+from django.core.cache import cache
 from django.db import transaction
 from django.db.models import Count, F, Q, Sum
 from django.utils import timezone
@@ -9,6 +11,8 @@ from rest_framework.response import Response
 from rest_framework.authtoken.models import Token
 from rest_framework.permissions import AllowAny, IsAuthenticated
 from django_filters.rest_framework import DjangoFilterBackend
+
+from .tasks import generate_mock_vitals, TELEICU_MONITORED_KEY
 
 from .models import (
     Patient, Encounter, Vitals, Medication, SyncEntry,
@@ -354,3 +358,101 @@ class DashboardView(generics.GenericAPIView):
             ).count(),
         }
         return Response(DashboardStatsSerializer(data).data)
+
+
+# ── TeleICU Monitoring Endpoints ─────────────────────────────────────────────
+
+@api_view(['POST'])
+@permission_classes([IsAuthenticated])
+def start_monitoring(request):
+    """Start streaming vitals for a patient.
+
+    Request body::
+
+        {
+            "patient_id": "<uuid>",
+            "encounter_id": "<uuid>"
+        }
+
+    The patient/encounter pair is registered in the Redis-backed cache
+    and the Celery Beat task starts generating mock vitals for it
+    within the next 5-second tick.
+    """
+    patient_id = request.data.get('patient_id')
+    encounter_id = request.data.get('encounter_id')
+
+    if not patient_id or not encounter_id:
+        return Response(
+            {'error': 'Both patient_id and encounter_id are required.'},
+            status=status.HTTP_400_BAD_REQUEST,
+        )
+
+    # Validate patient exists
+    if not Patient.objects.filter(id=patient_id).exists():
+        return Response(
+            {'error': 'Patient not found.'},
+            status=status.HTTP_404_NOT_FOUND,
+        )
+
+    # Validate encounter exists and belongs to patient
+    encounter_qs = Encounter.objects.filter(id=encounter_id, patient_id=patient_id)
+    if not encounter_qs.exists():
+        return Response(
+            {'error': 'Encounter not found or does not belong to this patient.'},
+            status=status.HTTP_404_NOT_FOUND,
+        )
+
+    # Register in the monitored set (Redis-backed cache)
+    monitored = cache.get(TELEICU_MONITORED_KEY, {})
+    monitored[patient_id] = encounter_id
+    cache.set(TELEICU_MONITORED_KEY, monitored)
+
+    # Kick off an immediate vitals generation (don't wait for the 5s beat)
+    generate_mock_vitals.delay(patient_id, encounter_id)
+
+    return Response({
+        'status': 'started',
+        'patient_id': patient_id,
+        'encounter_id': encounter_id,
+        'message': 'Vitals monitoring started.',
+    })
+
+
+@api_view(['POST'])
+@permission_classes([IsAuthenticated])
+def stop_monitoring(request):
+    """Stop streaming vitals for a patient.
+
+    Request body::
+
+        {
+            "patient_id": "<uuid>"
+        }
+
+    Removes the patient from the monitored cache set so the next
+    Celery Beat tick will skip it.
+    """
+    patient_id = request.data.get('patient_id')
+
+    if not patient_id:
+        return Response(
+            {'error': 'patient_id is required.'},
+            status=status.HTTP_400_BAD_REQUEST,
+        )
+
+    monitored = cache.get(TELEICU_MONITORED_KEY, {})
+    removed = monitored.pop(patient_id, None)
+
+    if removed is None:
+        return Response(
+            {'error': 'Patient is not currently being monitored.'},
+            status=status.HTTP_404_NOT_FOUND,
+        )
+
+    cache.set(TELEICU_MONITORED_KEY, monitored)
+
+    return Response({
+        'status': 'stopped',
+        'patient_id': patient_id,
+        'message': 'Vitals monitoring stopped.',
+    })

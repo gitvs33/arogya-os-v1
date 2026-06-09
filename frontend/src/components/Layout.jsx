@@ -1,10 +1,13 @@
-import { useState } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import { Link, useLocation, Outlet } from 'react-router-dom';
+import { useAlertWebSocket } from '../hooks/useAlertWebSocket';
+import AlertToast from './AlertToast';
 
 const navItems = [
   { path: '/', label: 'Dashboard', icon: '📊' },
   { path: '/patients', label: 'Patients', icon: '👥' },
   { path: '/encounters', label: 'Encounters', icon: '📋' },
+  { path: '/teleicu', label: 'TeleICU', icon: '🫀' },
   { path: '/prescriptions', label: 'Prescriptions', icon: '💊' },
   { path: '/billing', label: 'Billing', icon: '💰' },
   { path: '/alerts', label: 'Alerts', icon: '🔔' },
@@ -13,6 +16,21 @@ const navItems = [
 export default function Layout() {
   const location = useLocation();
   const [sidebarOpen, setSidebarOpen] = useState(true);
+
+  // ── Global alert toast ──────────────────────────────────────────────────
+  const { latestAlert, clearAlert } = useAlertWebSocket();
+  const [toastAlert, setToastAlert] = useState(null);
+
+  useEffect(() => {
+    if (latestAlert) {
+      setToastAlert(latestAlert);
+    }
+  }, [latestAlert]);
+
+  const handleDismissToast = useCallback(() => {
+    setToastAlert(null);
+    clearAlert();
+  }, [clearAlert]);
 
   return (
     <div className="flex h-screen bg-gray-50">
@@ -73,6 +91,11 @@ export default function Layout() {
           <Outlet />
         </div>
       </main>
+
+      {/* Global alert toast */}
+      {toastAlert && (
+        <AlertToast alert={toastAlert} onDismiss={handleDismissToast} />
+      )}
     </div>
   );
 }

@@ -26,7 +26,7 @@ export default function Login() {
         const data = await response.json().catch(() => ({}));
         setError(data.error || data.detail || 'Invalid username or password');
       }
-    } catch (err) {
+    } catch {
       setError('Network error. Is the backend running?');
     }
   };

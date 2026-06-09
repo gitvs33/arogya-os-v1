@@ -1,5 +1,5 @@
 import { describe, it, expect, vi, beforeEach } from 'vitest';
-import { render, screen, waitFor, fireEvent } from '@testing-library/react';
+import { render, screen, waitFor } from '@testing-library/react';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { MemoryRouter } from 'react-router-dom';
 import userEvent from '@testing-library/user-event';
@@ -25,23 +25,7 @@ const mockPatientsPage1 = {
   ],
 };
 
-const mockPatientsSearchResult = {
-  count: 1,
-  next: null,
-  previous: null,
-  results: [
-    { id: 1, first_name: 'Ravi', last_name: 'Sharma', phone: '9876543210', gender: 'M', age: 35, city: 'Mumbai' },
-  ],
-};
 
-const mockPatientsPaginated = {
-  count: 25,
-  next: 'http://localhost:8000/api/patients/?page=2',
-  previous: 'http://localhost:8000/api/patients/?page=1',
-  results: [
-    { id: 5, first_name: 'Vijay', last_name: 'Patel', phone: '9876543214', gender: 'M', age: 30, city: 'Ahmedabad' },
-  ],
-};
 
 function renderWithProviders(ui) {
   const queryClient = new QueryClient({

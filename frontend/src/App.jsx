@@ -8,6 +8,7 @@ import PatientDetail from './pages/PatientDetail';
 import NewPatient from './pages/NewPatient';
 import Encounters from './pages/Encounters';
 import EncounterDetail from './pages/EncounterDetail';
+import TeleICU from './pages/TeleICU';
 import NewEncounter from './pages/NewEncounter';
 import Prescriptions from './pages/Prescriptions';
 import Billing from './pages/Billing';
@@ -35,6 +36,7 @@ export default function App() {
             <Route path="/patients" element={<Patients />} />
             <Route path="/patients/new" element={<NewPatient />} />
             <Route path="/patients/:id" element={<PatientDetail />} />
+            <Route path="/teleicu" element={<TeleICU />} />
             <Route path="/encounters" element={<Encounters />} />
             <Route path="/encounters/new" element={<NewEncounter />} />
             <Route path="/encounters/:id" element={<EncounterDetail />} />

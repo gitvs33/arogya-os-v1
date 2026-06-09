@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 import { useNavigate, useSearchParams } from 'react-router-dom';
 import { useMutation, useQuery } from '@tanstack/react-query';
 import { patientsApi } from '../api/patients';
@@ -30,18 +30,23 @@ export default function NewEncounter() {
     enabled: shouldFetch,
   });
 
-  const patients = patientsData?.data?.results || [];
+  const patientsDataResults = patientsData?.data?.results;
+  const patients = useMemo(() => patientsDataResults || [], [patientsDataResults]);
 
   // Pre-select patient from URL parameter once patients are loaded
   useEffect(() => {
     if (preselectedPatientId && patients.length > 0 && !initialLoadDone) {
       const patient = patients.find((p) => String(p.id) === preselectedPatientId);
       if (patient) {
-        setSelectedPatient(patient);
-        setSearch(patient.full_name);
-        setShowDropdown(false);
+        setTimeout(() => {
+          setSelectedPatient(patient);
+          setSearch(patient.full_name);
+          setShowDropdown(false);
+          setInitialLoadDone(true);
+        }, 0);
+      } else {
+        setTimeout(() => setInitialLoadDone(true), 0);
       }
-      setInitialLoadDone(true);
     }
   }, [preselectedPatientId, patients, initialLoadDone]);
 

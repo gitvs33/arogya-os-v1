@@ -14,4 +14,5 @@ urlpatterns = [
     path('', include(router.urls)),
     path('dashboard/', views.DashboardView.as_view(), name='dashboard'),
     path('login/', views.login_view, name='login'),
+    path('teleicu/', include('medos.teleicu_urls')),
 ]

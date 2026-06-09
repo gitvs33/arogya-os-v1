@@ -18,7 +18,7 @@ import { alertsApi } from '../api/alerts';
 const mockAlerts = [
   {
     id: 1,
-    alert_type: 'ALLERGY',
+    alert_type: 'VITALS',
     severity: 'CRITICAL',
     patient_name: 'John Doe',
     patient_id: 1,
@@ -28,7 +28,7 @@ const mockAlerts = [
   },
   {
     id: 2,
-    alert_type: 'LAB_RESULT',
+    alert_type: 'DDI',
     severity: 'WARNING',
     patient_name: 'Jane Smith',
     patient_id: 2,
@@ -38,7 +38,7 @@ const mockAlerts = [
   },
   {
     id: 3,
-    alert_type: 'VITAL_SIGN',
+    alert_type: 'RISK',
     severity: 'INFO',
     patient_name: 'Bob Wilson',
     patient_id: 3,
@@ -48,7 +48,7 @@ const mockAlerts = [
   },
   {
     id: 4,
-    alert_type: 'MEDICATION',
+    alert_type: 'SYSTEM',
     severity: 'WARNING',
     patient_name: 'Alice Brown',
     patient_id: 4,
@@ -105,10 +105,10 @@ describe('Alerts Page', () => {
     it('displays alerts from the API', async () => {
       renderWithProviders(<Alerts />);
       await waitFor(() => {
-        expect(screen.getAllByText('ALLERGY').length).toBeGreaterThanOrEqual(1);
-        expect(screen.getAllByText('LAB RESULT').length).toBeGreaterThanOrEqual(1);
-        expect(screen.getAllByText('VITAL SIGN').length).toBeGreaterThanOrEqual(1);
-        expect(screen.getAllByText('MEDICATION').length).toBeGreaterThanOrEqual(1);
+        expect(screen.getAllByText('VITALS').length).toBeGreaterThanOrEqual(1);
+        expect(screen.getAllByText('DDI').length).toBeGreaterThanOrEqual(1);
+        expect(screen.getAllByText('RISK').length).toBeGreaterThanOrEqual(1);
+        expect(screen.getAllByText('SYSTEM').length).toBeGreaterThanOrEqual(1);
       });
     });
 
@@ -178,10 +178,10 @@ describe('Alerts Page', () => {
       renderWithProviders(<Alerts />);
       await waitFor(() => screen.getByLabelText('Type'));
 
-      await user.selectOptions(screen.getByLabelText('Type'), 'ALLERGY');
+      await user.selectOptions(screen.getByLabelText('Type'), 'VITALS');
       await waitFor(() => {
         expect(alertsApi.list).toHaveBeenCalledWith(
-          expect.objectContaining({ alert_type: 'ALLERGY' })
+          expect.objectContaining({ alert_type: 'VITALS' })
         );
       });
     });

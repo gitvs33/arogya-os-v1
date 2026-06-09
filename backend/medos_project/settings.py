@@ -24,6 +24,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     # Third party
+    'channels',
     'rest_framework',
     'rest_framework.authtoken',
     'corsheaders',
@@ -61,6 +62,7 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'medos_project.wsgi.application'
+ASGI_APPLICATION = 'medos_project.asgi.application'
 
 # Database
 DATABASES = {
@@ -77,6 +79,7 @@ DATABASES = {
 # REST Framework
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': [
+        'medos.auth_backends.KeycloakJwtAuthentication',
         'rest_framework.authentication.TokenAuthentication',
         'rest_framework.authentication.SessionAuthentication',
     ],
@@ -116,6 +119,30 @@ CELERY_BROKER_URL = os.environ.get('CELERY_BROKER_URL', 'redis://localhost:6379/
 CELERY_RESULT_BACKEND = os.environ.get('CELERY_RESULT_BACKEND', 'redis://localhost:6379/0')
 CELERY_ACCEPT_CONTENT = ['json']
 CELERY_TASK_SERIALIZER = 'json'
+CELERY_TASK_ALWAYS_EAGER = True  # Run tasks synchronously in dev (no Redis needed)
+
+# Celery Beat Schedule
+from celery.schedules import crontab  # noqa: E402
+
+CELERY_BEAT_SCHEDULE = {
+    'teleicu-vitals-stream': {
+        'task': 'medos.tasks.start_vitals_stream',
+        'schedule': 5.0,  # Every 5 seconds
+        'options': {'expires': 10},
+    },
+}
+
+# Channels
+CHANNEL_LAYERS = {
+    'default': {
+        'BACKEND': 'channels.layers.InMemoryChannelLayer',
+    },
+}
+
+# Keycloak
+KEYCLOAK_SERVER_URL = os.environ.get('KEYCLOAK_SERVER_URL', '')
+KEYCLOAK_REALM = os.environ.get('KEYCLOAK_REALM', 'medos')
+KEYCLOAK_CLIENT_ID = os.environ.get('KEYCLOAK_CLIENT_ID', 'medos-backend')
 
 # Sentry
 if os.environ.get('SENTRY_DSN'):

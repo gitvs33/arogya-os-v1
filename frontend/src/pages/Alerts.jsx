@@ -100,7 +100,8 @@ export default function Alerts() {
     },
   });
 
-  const alerts = data?.data?.results || [];
+  const responseData = data?.data || {};
+  const alerts = Array.isArray(responseData) ? responseData : (responseData.results || []);
 
   if (isLoading) return <LoadingSpinner />;
   if (error) return <ErrorAlert message={error.message} />;

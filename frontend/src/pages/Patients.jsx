@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import { useQuery } from '@tanstack/react-query';
 import { Link, useNavigate } from 'react-router-dom';
 import { patientsApi } from '../api/patients';
@@ -26,24 +26,14 @@ export default function Patients() {
   const [debouncedSearch, setDebouncedSearch] = useState('');
   const navigate = useNavigate();
 
-  // Debounce search input
-  const handleSearchChange = (e) => {
-    const value = e.target.value;
-    setSearch(value);
-    const timeout = setTimeout(() => {
-      setDebouncedSearch(value);
-      setPage(1);
-    }, 400);
-    return () => clearTimeout(timeout);
-  };
+  const searchTimeout = useRef(null);
 
-  // Store timeout ref for cleanup
-  let searchTimeout;
+  // Debounce search input
   const onSearchChange = (e) => {
     const value = e.target.value;
     setSearch(value);
-    clearTimeout(searchTimeout);
-    searchTimeout = setTimeout(() => {
+    if (searchTimeout.current) clearTimeout(searchTimeout.current);
+    searchTimeout.current = setTimeout(() => {
       setDebouncedSearch(value);
       setPage(1);
     }, 400);
