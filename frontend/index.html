@@ -7,7 +7,15 @@
     <title>frontend</title>
   </head>
   <body>
+    <script>
+      window.addEventListener('error', function(e) {
+        document.body.innerHTML += '<div style="color: red; padding: 20px; font-family: monospace; z-index: 9999; position: absolute; top: 0; left: 0; background: white; width: 100vw; height: 100vh;"><h1>Global Script Error</h1><pre>' + e.error?.stack + '</pre></div>';
+      });
+      window.addEventListener('unhandledrejection', function(e) {
+        document.body.innerHTML += '<div style="color: red; padding: 20px; font-family: monospace; z-index: 9999; position: absolute; top: 0; left: 0; background: white; width: 100vw; height: 100vh;"><h1>Unhandled Promise Rejection</h1><pre>' + e.reason?.stack + '</pre></div>';
+      });
+    </script>
     <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
+    <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>

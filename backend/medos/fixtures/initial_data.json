@@ -1,0 +1,3322 @@
+[
+{
+  "model": "contenttypes.contenttype",
+  "fields": {
+    "app_label": "admin",
+    "model": "logentry"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "fields": {
+    "app_label": "auth",
+    "model": "group"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "fields": {
+    "app_label": "auth",
+    "model": "permission"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "fields": {
+    "app_label": "auth",
+    "model": "user"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "fields": {
+    "app_label": "contenttypes",
+    "model": "contenttype"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "fields": {
+    "app_label": "sessions",
+    "model": "session"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "fields": {
+    "app_label": "medos",
+    "model": "druginteraction"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "fields": {
+    "app_label": "medos",
+    "model": "encounter"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "fields": {
+    "app_label": "medos",
+    "model": "invoice"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "fields": {
+    "app_label": "medos",
+    "model": "invoicelineitem"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "fields": {
+    "app_label": "medos",
+    "model": "medicalalert"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "fields": {
+    "app_label": "medos",
+    "model": "medication"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "fields": {
+    "app_label": "medos",
+    "model": "patient"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "fields": {
+    "app_label": "medos",
+    "model": "reconciliationlog"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "fields": {
+    "app_label": "medos",
+    "model": "syncentry"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "fields": {
+    "app_label": "medos",
+    "model": "vitals"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "fields": {
+    "app_label": "authtoken",
+    "model": "token"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "fields": {
+    "app_label": "authtoken",
+    "model": "tokenproxy"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "fields": {
+    "app_label": "medos",
+    "model": "hospitaluserprofile"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "fields": {
+    "app_label": "medos",
+    "model": "role"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "fields": {
+    "app_label": "medos",
+    "model": "clinicalnote"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "5tyzorzhhtnuuz7q2nxl74lo0006lenv",
+  "fields": {
+    "session_data": ".eJxVjDEOgzAMAP_iuYoSiIvD2J03IDtOCm0VJAJT1b9XSAztene6N4y8b9O417SOs0IPDVx-mXB8pnIIfXC5LyYuZVtnMUdiTlvNsGh63c72bzBxnaAHQueIWRy16gI7JQy5i6lR8V6RRHPnrxJIchvQettRyhatDW3GEBU-X9_LN7g:1wXCkA:odO0-hQPmNGZzZ0XycUa5EKw4WQ0KnrlAj9sXpr4g3w",
+    "expire_date": "2026-06-24T06:48:54.163Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "73zq7cfd4opb8xzpr650xsvekokb33bn",
+  "fields": {
+    "session_data": ".eJxVjEEOwiAQAP_C2ZBSYKE9evcNZIHFogaa0iYa499Nkx70OjOZN3O4rZPbGi0uRzYywU6_zGO4U9lFvGG5Vh5qWZfs-Z7wwzZ-qZEe56P9G0zYJjYy6GTSxoo0DBYD6BgQo9BgUgIlESh6CQqT1XbQvYTglYfeKKJkQHS0Txu1lmtx9Jzz8mJj9_kCjS4_Kw:1wXBaf:WAk3Ui0nY3QgTMAExZGT-jjeHqK3CvUIlg-icQ4ex5U",
+    "expire_date": "2026-06-24T05:35:01.967Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "8xrimc0gqhxs3s1t5fk2yuq6pfccbech",
+  "fields": {
+    "session_data": ".eJxVjLsOwjAMAP_FM4riOGlKR3a-IbLjQAoolfqYEP-OKnWA9e50b0i8rTVtS5nTqDAAwumXCednabvQB7f7ZPLU1nkUsyfmsIu5Tlpel6P9G1ReKgwgqlaI1IulLM6K0I07h6GXKIyuKz4EjhTDWbFH7Ym42GJ9lugxI3y-8QY30w:1wX03w:uBuvz4aa94wnep8Nc5OxpDJpRPFYah12SRBrBv4KiZI",
+    "expire_date": "2026-06-23T17:16:28.495Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "dfqpkf04di53wed19vblddljg6hggn3c",
+  "fields": {
+    "session_data": ".eJxVjDEOgzAMAP_iuYoSiIvD2J03IDtOCm0VJAJT1b9XSAztene6N4y8b9O417SOs0IPDVx-mXB8pnIIfXC5LyYuZVtnMUdiTlvNsGh63c72bzBxnaAHQueIWRy16gI7JQy5i6lR8V6RRHPnrxJIchvQettRyhatDW3GEBU-X9_LN7g:1wXCkA:odO0-hQPmNGZzZ0XycUa5EKw4WQ0KnrlAj9sXpr4g3w",
+    "expire_date": "2026-06-24T06:48:54.078Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "fhs6faslogevtu2ybi4kdmcnqaxfyul3",
+  "fields": {
+    "session_data": ".eJxVjLsOwjAMAP_FM4riOGlKR3a-IbLjQAoolfqYEP-OKnWA9e50b0i8rTVtS5nTqDAAwumXCednabvQB7f7ZPLU1nkUsyfmsIu5Tlpel6P9G1ReKgwgqlaI1IulLM6K0I07h6GXKIyuKz4EjhTDWbFH7Ym42GJ9lugxI3y-8QY30w:1wX02h:xJ-qAFAqDl9O8icApxBKkj3L0jK65LHZCTnEj_sIt-4",
+    "expire_date": "2026-06-23T17:15:11.905Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "jj0oqr6ncvj5y59iujofb9yhinbpn9ys",
+  "fields": {
+    "session_data": ".eJxVjDEOgzAMAP_iuYoSiIvD2J03IDtOCm0VJAJT1b9XSAztene6N4y8b9O417SOs0IPDVx-mXB8pnIIfXC5LyYuZVtnMUdiTlvNsGh63c72bzBxnaAHQueIWRy16gI7JQy5i6lR8V6RRHPnrxJIchvQettRyhatDW3GEBU-X9_LN7g:1wXCxg:WjGTnn55AOqB_D8ccZwi8cLSXdkZ90SsKxczB80Shjs",
+    "expire_date": "2026-06-24T07:02:52.018Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "pf91a3f74s7gfrct8ywuhhzk5ncinqu7",
+  "fields": {
+    "session_data": ".eJxVjDEOgzAMAP_iuYoSiIvD2J03IDtOCm0VJAJT1b9XSAztene6N4y8b9O417SOs0IPDVx-mXB8pnIIfXC5LyYuZVtnMUdiTlvNsGh63c72bzBxnaAHQueIWRy16gI7JQy5i6lR8V6RRHPnrxJIchvQettRyhatDW3GEBU-X9_LN7g:1wXCm8:GgnqaEgsgYLyCKJ-WHcdiwNSNyGDlEeEJC0nOqS8D0M",
+    "expire_date": "2026-06-24T06:50:56.535Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "pmktewzslfy41zmkabwti7280169zd2r",
+  "fields": {
+    "session_data": ".eJxVjLsOwjAMAP_FM4riOGlKR3a-IbLjQAoolfqYEP-OKnWA9e50b0i8rTVtS5nTqDAAwumXCednabvQB7f7ZPLU1nkUsyfmsIu5Tlpel6P9G1ReKgwgqlaI1IulLM6K0I07h6GXKIyuKz4EjhTDWbFH7Ym42GJ9lugxI3y-8QY30w:1wX0U8:V5vvArheWENrs3IzXy4NuvlyexWtbvjJChrSoHW6PEM",
+    "expire_date": "2026-06-23T17:43:32.888Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "sn8npnanzti9q8c9irhw5x0divsfh0hz",
+  "fields": {
+    "session_data": ".eJxVjDEOgzAMAP_iuYoSiIvD2J03IDtOCm0VJAJT1b9XSAztene6N4y8b9O417SOs0IPDVx-mXB8pnIIfXC5LyYuZVtnMUdiTlvNsGh63c72bzBxnaAHQueIWRy16gI7JQy5i6lR8V6RRHPnrxJIchvQettRyhatDW3GEBU-X9_LN7g:1wXCiQ:s6Kt574RxjyNqM4BXSgjsBQryIakN6WRQM5aa24AgBs",
+    "expire_date": "2026-06-24T06:47:06.232Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "x3u0tcmxeoputcx72ahu4f6j4ghnju1m",
+  "fields": {
+    "session_data": ".eJxVjDEOgzAMAP_iuYoSiIvD2J03IDtOCm0VJAJT1b9XSAztene6N4y8b9O417SOs0IPDVx-mXB8pnIIfXC5LyYuZVtnMUdiTlvNsGh63c72bzBxnaAHQueIWRy16gI7JQy5i6lR8V6RRHPnrxJIchvQettRyhatDW3GEBU-X9_LN7g:1wXB8I:NZEhFK_kcQeSxkHP3zGgPrR7CC6edAXT1yMSvP5q8Bs",
+    "expire_date": "2026-06-24T05:05:42.482Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "y0xye3pun174do6qsz4csc99tu4t9cd5",
+  "fields": {
+    "session_data": ".eJxVjDEOgzAMAP_iuYoSiIvD2J03IDtOCm0VJAJT1b9XSAztene6N4y8b9O417SOs0IPDVx-mXB8pnIIfXC5LyYuZVtnMUdiTlvNsGh63c72bzBxnaAHQueIWRy16gI7JQy5i6lR8V6RRHPnrxJIchvQettRyhatDW3GEBU-X9_LN7g:1wXCjg:vu9GdsYc8JoEfzwhB2N_1LF22LqiPhjEOHAP_7t7gfE",
+    "expire_date": "2026-06-24T06:48:24.556Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "zdepazr3fo354t88jmkeie80g8tlt6k1",
+  "fields": {
+    "session_data": ".eJxVjDEOgzAMAP_iuYoSiIvD2J03IDtOCm0VJAJT1b9XSAztene6N4y8b9O417SOs0IPDVx-mXB8pnIIfXC5LyYuZVtnMUdiTlvNsGh63c72bzBxnaAHQueIWRy16gI7JQy5i6lR8V6RRHPnrxJIchvQettRyhatDW3GEBU-X9_LN7g:1wXClZ:5sExcXVVubfDrKlRyh7n6V3cQGRdmNCoP13bjFVr1Tc",
+    "expire_date": "2026-06-24T06:50:21.032Z"
+  }
+},
+{
+  "model": "medos.role",
+  "pk": 1,
+  "fields": {
+    "name": "Admin",
+    "description": "Full system access — manages users, settings, and all modules.",
+    "permissions": {
+      "patients": [
+        "read",
+        "write",
+        "delete"
+      ],
+      "encounters": [
+        "read",
+        "write",
+        "delete"
+      ],
+      "billing": [
+        "read",
+        "write",
+        "delete"
+      ],
+      "alerts": [
+        "read",
+        "write",
+        "acknowledge",
+        "resolve"
+      ],
+      "teleicu": [
+        "read",
+        "write",
+        "monitor"
+      ],
+      "admin": [
+        "read",
+        "write",
+        "manage_users",
+        "manage_roles"
+      ],
+      "sync": [
+        "read",
+        "write"
+      ],
+      "reports": [
+        "read",
+        "export"
+      ]
+    },
+    "is_active": true,
+    "created_at": "2026-06-10T03:51:29.528Z"
+  }
+},
+{
+  "model": "medos.role",
+  "pk": 2,
+  "fields": {
+    "name": "Doctor",
+    "description": "Clinical access — manages encounters, prescriptions, and patient care.",
+    "permissions": {
+      "patients": [
+        "read",
+        "write"
+      ],
+      "encounters": [
+        "read",
+        "write",
+        "complete"
+      ],
+      "billing": [
+        "read"
+      ],
+      "alerts": [
+        "read",
+        "acknowledge",
+        "resolve"
+      ],
+      "teleicu": [
+        "read",
+        "monitor"
+      ],
+      "admin": [],
+      "sync": [
+        "read",
+        "write"
+      ],
+      "reports": []
+    },
+    "is_active": true,
+    "created_at": "2026-06-10T03:51:29.539Z"
+  }
+},
+{
+  "model": "medos.role",
+  "pk": 3,
+  "fields": {
+    "name": "Nurse",
+    "description": "Records vitals, administers medications, and monitors patients.",
+    "permissions": {
+      "patients": [
+        "read"
+      ],
+      "encounters": [
+        "read",
+        "write"
+      ],
+      "billing": [],
+      "alerts": [
+        "read",
+        "acknowledge"
+      ],
+      "teleicu": [
+        "read",
+        "monitor"
+      ],
+      "admin": [],
+      "sync": [
+        "read",
+        "write"
+      ],
+      "reports": []
+    },
+    "is_active": true,
+    "created_at": "2026-06-10T03:51:29.547Z"
+  }
+},
+{
+  "model": "medos.role",
+  "pk": 4,
+  "fields": {
+    "name": "Receptionist",
+    "description": "Patient registration, appointment scheduling, and billing intake.",
+    "permissions": {
+      "patients": [
+        "read",
+        "write"
+      ],
+      "encounters": [
+        "read"
+      ],
+      "billing": [
+        "read",
+        "write"
+      ],
+      "alerts": [
+        "read"
+      ],
+      "teleicu": [],
+      "admin": [],
+      "sync": [
+        "read",
+        "write"
+      ],
+      "reports": [
+        "read"
+      ]
+    },
+    "is_active": true,
+    "created_at": "2026-06-10T03:51:29.556Z"
+  }
+},
+{
+  "model": "medos.role",
+  "pk": 5,
+  "fields": {
+    "name": "Pharmacist",
+    "description": "Medication dispensing and drug interaction checks.",
+    "permissions": {
+      "patients": [
+        "read"
+      ],
+      "encounters": [
+        "read"
+      ],
+      "billing": [
+        "read"
+      ],
+      "alerts": [
+        "read",
+        "acknowledge"
+      ],
+      "teleicu": [],
+      "admin": [],
+      "sync": [
+        "read",
+        "write"
+      ],
+      "reports": []
+    },
+    "is_active": true,
+    "created_at": "2026-06-10T03:51:29.564Z"
+  }
+},
+{
+  "model": "medos.druginteraction",
+  "pk": 7,
+  "fields": {
+    "drug_a": "Metformin",
+    "drug_b": "Furosemide",
+    "severity": "moderate",
+    "description": "Furosemide may increase metformin levels. Monitor blood glucose.",
+    "mechanism": "",
+    "recommendation": "",
+    "source": "DDInter",
+    "cached_at": "2026-06-09T17:10:30.887Z"
+  }
+},
+{
+  "model": "medos.druginteraction",
+  "pk": 10,
+  "fields": {
+    "drug_a": "Omeprazole",
+    "drug_b": "Clopidogrel",
+    "severity": "moderate",
+    "description": "PPIs may reduce clopidogrel effectiveness.",
+    "mechanism": "",
+    "recommendation": "",
+    "source": "DDInter",
+    "cached_at": "2026-06-09T17:10:30.911Z"
+  }
+},
+{
+  "model": "medos.druginteraction",
+  "pk": 11,
+  "fields": {
+    "drug_a": "Digoxin",
+    "drug_b": "Furosemide",
+    "severity": "moderate",
+    "description": "Hypokalemia from diuretics increases digoxin toxicity risk.",
+    "mechanism": "",
+    "recommendation": "",
+    "source": "DDInter",
+    "cached_at": "2026-06-09T17:10:30.919Z"
+  }
+},
+{
+  "model": "medos.druginteraction",
+  "pk": 16,
+  "fields": {
+    "drug_a": "Cetirizine",
+    "drug_b": "Alcohol",
+    "severity": "minor",
+    "description": "Increased sedation risk. Avoid alcohol.",
+    "mechanism": "",
+    "recommendation": "",
+    "source": "DrugBank",
+    "cached_at": "2026-06-09T17:10:30.959Z"
+  }
+},
+{
+  "model": "medos.druginteraction",
+  "pk": 17,
+  "fields": {
+    "drug_a": "Ibuprofen",
+    "drug_b": "Aspirin",
+    "severity": "minor",
+    "description": "Increased GI irritation risk. Avoid concurrent use.",
+    "mechanism": "",
+    "recommendation": "",
+    "source": "DDInter",
+    "cached_at": "2026-06-09T17:10:30.967Z"
+  }
+},
+{
+  "model": "medos.druginteraction",
+  "pk": 19,
+  "fields": {
+    "drug_a": "Amlodipine",
+    "drug_b": "Atenolol",
+    "severity": "moderate",
+    "description": "Additive hypotensive effect. Risk of bradycardia and dizziness.",
+    "mechanism": "Synergistic AV node suppression and vasodilation.",
+    "recommendation": "Monitor BP and HR. Consider dose reduction if symptoms develop.",
+    "source": "DDInter",
+    "cached_at": "2026-06-09T18:01:41.372Z"
+  }
+},
+{
+  "model": "medos.druginteraction",
+  "pk": 20,
+  "fields": {
+    "drug_a": "Amlodipine",
+    "drug_b": "Metoprolol",
+    "severity": "moderate",
+    "description": "Additive hypotensive effect. Risk of bradycardia.",
+    "mechanism": "Synergistic AV node suppression and vasodilation.",
+    "recommendation": "Monitor BP and HR. Consider dose reduction if symptoms develop.",
+    "source": "DDInter",
+    "cached_at": "2026-06-09T18:01:41.381Z"
+  }
+},
+{
+  "model": "medos.druginteraction",
+  "pk": 21,
+  "fields": {
+    "drug_a": "Telmisartan",
+    "drug_b": "Ramipril",
+    "severity": "major",
+    "description": "Dual RAAS blockade increases risk of hypotension, hyperkalemia, and renal impairment.",
+    "mechanism": "Additive ACE inhibition and AT1 receptor blockade.",
+    "recommendation": "Avoid combination. Use single RAAS agent. Monitor K+ and creatinine if unavoidable.",
+    "source": "OpenFDA",
+    "cached_at": "2026-06-09T18:01:41.389Z"
+  }
+},
+{
+  "model": "medos.druginteraction",
+  "pk": 22,
+  "fields": {
+    "drug_a": "Losartan",
+    "drug_b": "Ramipril",
+    "severity": "major",
+    "description": "Dual RAAS blockade increases risk of hypotension, hyperkalemia, and renal impairment.",
+    "mechanism": "Additive ACE inhibition and AT1 receptor blockade.",
+    "recommendation": "Avoid combination. Use single RAAS agent. Monitor K+ and creatinine if unavoidable.",
+    "source": "OpenFDA",
+    "cached_at": "2026-06-09T18:01:41.397Z"
+  }
+},
+{
+  "model": "medos.druginteraction",
+  "pk": 23,
+  "fields": {
+    "drug_a": "Telmisartan",
+    "drug_b": "Enalapril",
+    "severity": "major",
+    "description": "Dual RAAS blockade — increased risk of hypotension and hyperkalemia.",
+    "mechanism": "Additive ACE inhibition and AT1 receptor blockade.",
+    "recommendation": "Avoid. Use single RAAS agent. Monitor K+ if unavoidable.",
+    "source": "DDInter",
+    "cached_at": "2026-06-09T18:01:41.406Z"
+  }
+},
+{
+  "model": "medos.druginteraction",
+  "pk": 24,
+  "fields": {
+    "drug_a": "Losartan",
+    "drug_b": "Enalapril",
+    "severity": "major",
+    "description": "Dual RAAS blockade — increased risk of hypotension and hyperkalemia.",
+    "mechanism": "Additive ACE inhibition and AT1 receptor blockade.",
+    "recommendation": "Avoid combination. Monitor renal function and K+.",
+    "source": "DDInter",
+    "cached_at": "2026-06-09T18:01:41.414Z"
+  }
+},
+{
+  "model": "medos.druginteraction",
+  "pk": 25,
+  "fields": {
+    "drug_a": "Spironolactone",
+    "drug_b": "Ramipril",
+    "severity": "major",
+    "description": "Combined K+-sparing diuretic + ACE inhibitor increases hyperkalemia risk.",
+    "mechanism": "Aldosterone antagonism plus ACE inhibition reduces K+ excretion.",
+    "recommendation": "Monitor K+ closely. Limit dietary K+ intake. Consider reducing spironolactone dose.",
+    "source": "DrugBank",
+    "cached_at": "2026-06-09T18:01:41.422Z"
+  }
+},
+{
+  "model": "medos.druginteraction",
+  "pk": 26,
+  "fields": {
+    "drug_a": "Spironolactone",
+    "drug_b": "Telmisartan",
+    "severity": "major",
+    "description": "ARB + K+-sparing diuretic increases hyperkalemia risk.",
+    "mechanism": "Aldosterone antagonism plus AT1 blockade reduces K+ excretion.",
+    "recommendation": "Monitor K+ regularly. Avoid if baseline K+ >5.0.",
+    "source": "DrugBank",
+    "cached_at": "2026-06-09T18:01:41.430Z"
+  }
+},
+{
+  "model": "medos.druginteraction",
+  "pk": 27,
+  "fields": {
+    "drug_a": "Spironolactone",
+    "drug_b": "Losartan",
+    "severity": "major",
+    "description": "ARB + K+-sparing diuretic increases hyperkalemia risk.",
+    "mechanism": "Aldosterone antagonism plus AT1 blockade reduces K+ excretion.",
+    "recommendation": "Monitor K+ regularly. Avoid if baseline K+ >5.0.",
+    "source": "DDInter",
+    "cached_at": "2026-06-09T18:01:41.439Z"
+  }
+},
+{
+  "model": "medos.druginteraction",
+  "pk": 28,
+  "fields": {
+    "drug_a": "Digoxin",
+    "drug_b": "Hydrochlorothiazide",
+    "severity": "major",
+    "description": "Thiazide-induced hypokalemia increases digoxin toxicity risk.",
+    "mechanism": "HCTZ depletes K+, potentiating digoxin arrhythmogenicity.",
+    "recommendation": "Monitor K+. Maintain K+ >4.0. Consider K+ supplementation.",
+    "source": "DrugBank",
+    "cached_at": "2026-06-09T18:01:41.448Z"
+  }
+},
+{
+  "model": "medos.druginteraction",
+  "pk": 29,
+  "fields": {
+    "drug_a": "Digoxin",
+    "drug_b": "Amiodarone",
+    "severity": "major",
+    "description": "Amiodarone increases digoxin levels by 70-100%. Risk of bradycardia and toxicity.",
+    "mechanism": "Amiodarone reduces renal digoxin clearance and displaces tissue binding.",
+    "recommendation": "Reduce digoxin dose by 50% on starting amiodarone. Monitor levels and ECG.",
+    "source": "DDInter",
+    "cached_at": "2026-06-09T18:01:41.457Z"
+  }
+},
+{
+  "model": "medos.druginteraction",
+  "pk": 30,
+  "fields": {
+    "drug_a": "Clopidogrel",
+    "drug_b": "Omeprazole",
+    "severity": "moderate",
+    "description": "Omeprazole reduces clopidogrel activation via CYP2C19, potentially reducing antiplatelet effect.",
+    "mechanism": "CYP2C19 inhibition by omeprazole reduces conversion to active metabolite.",
+    "recommendation": "Use pantoprazole or rabeprazole instead (less CYP2C19 interaction).",
+    "source": "DDInter",
+    "cached_at": "2026-06-09T18:01:41.465Z"
+  }
+},
+{
+  "model": "medos.druginteraction",
+  "pk": 31,
+  "fields": {
+    "drug_a": "Clopidogrel",
+    "drug_b": "Pantoprazole",
+    "severity": "minor",
+    "description": "Minimal interaction. Pantoprazole has weaker CYP2C19 inhibition.",
+    "mechanism": "Pantoprazole undergoes non-enzymatic metabolism, minimal CYP interaction.",
+    "recommendation": "Safe for concurrent use. No dose adjustment needed.",
+    "source": "DrugBank",
+    "cached_at": "2026-06-09T18:01:41.474Z"
+  }
+},
+{
+  "model": "medos.druginteraction",
+  "pk": 32,
+  "fields": {
+    "drug_a": "Atorvastatin",
+    "drug_b": "Fenofibrate",
+    "severity": "moderate",
+    "description": "Increased risk of myopathy and rhabdomyolysis with statin-fibrate combination.",
+    "mechanism": "Additive HMG-CoA reductase inhibition and PPAR-alpha activation.",
+    "recommendation": "Monitor CK levels. Advise patient to report muscle pain. Avoid in renal impairment.",
+    "source": "DDInter",
+    "cached_at": "2026-06-09T18:01:41.482Z"
+  }
+},
+{
+  "model": "medos.druginteraction",
+  "pk": 33,
+  "fields": {
+    "drug_a": "Rosuvastatin",
+    "drug_b": "Fenofibrate",
+    "severity": "moderate",
+    "description": "Increased risk of myopathy with statin-fibrate combination.",
+    "mechanism": "Additive effect on skeletal muscle.",
+    "recommendation": "Monitor CK. Use lowest effective statin dose. Avoid in renal impairment.",
+    "source": "OpenFDA",
+    "cached_at": "2026-06-09T18:01:41.490Z"
+  }
+},
+{
+  "model": "medos.druginteraction",
+  "pk": 34,
+  "fields": {
+    "drug_a": "Aspirin",
+    "drug_b": "Ibuprofen",
+    "severity": "moderate",
+    "description": "Ibuprofen may reduce aspirin's antiplatelet effect and increase GI bleeding risk.",
+    "mechanism": "Competitive inhibition of COX-1 acetylation; additive GI mucosal damage.",
+    "recommendation": "Take ibuprofen at least 30 min after aspirin. Consider gastroprotection.",
+    "source": "DDInter",
+    "cached_at": "2026-06-09T18:01:41.499Z"
+  }
+},
+{
+  "model": "medos.druginteraction",
+  "pk": 35,
+  "fields": {
+    "drug_a": "Aspirin",
+    "drug_b": "Diclofenac",
+    "severity": "moderate",
+    "description": "Increased GI bleeding risk with NSAID + aspirin combination.",
+    "mechanism": "Additive COX-1 inhibition leading to gastric mucosal damage.",
+    "recommendation": "Add PPI for gastroprotection. Use lowest NSAID dose, shortest duration.",
+    "source": "DrugBank",
+    "cached_at": "2026-06-09T18:01:41.507Z"
+  }
+},
+{
+  "model": "medos.druginteraction",
+  "pk": 36,
+  "fields": {
+    "drug_a": "Aspirin",
+    "drug_b": "Aceclofenac",
+    "severity": "moderate",
+    "description": "Increased GI bleeding risk. Additive COX-1 inhibition.",
+    "mechanism": "Additive COX-1 inhibition leading to gastric mucosal injury.",
+    "recommendation": "Consider gastroprotection with PPI. Monitor for GI symptoms.",
+    "source": "DDInter",
+    "cached_at": "2026-06-09T18:01:41.515Z"
+  }
+},
+{
+  "model": "medos.druginteraction",
+  "pk": 37,
+  "fields": {
+    "drug_a": "Acenocoumarol",
+    "drug_b": "Aspirin",
+    "severity": "major",
+    "description": "Significantly increased bleeding risk. Avoid combination if possible.",
+    "mechanism": "Additive anticoagulant and antiplatelet effects.",
+    "recommendation": "Avoid. If unavoidable, monitor INR closely. Use lowest effective doses.",
+    "source": "DDInter",
+    "cached_at": "2026-06-09T18:01:41.524Z"
+  }
+},
+{
+  "model": "medos.druginteraction",
+  "pk": 38,
+  "fields": {
+    "drug_a": "Acenocoumarol",
+    "drug_b": "Metronidazole",
+    "severity": "major",
+    "description": "Metronidazole potentiates anticoagulant effect — INR may double.",
+    "mechanism": "Metronidazole inhibits hepatic metabolism of oral anticoagulants.",
+    "recommendation": "Monitor INR every 2-3 days during and for 1 week after metronidazole course.",
+    "source": "DrugBank",
+    "cached_at": "2026-06-09T18:01:41.532Z"
+  }
+},
+{
+  "model": "medos.druginteraction",
+  "pk": 39,
+  "fields": {
+    "drug_a": "Acenocoumarol",
+    "drug_b": "Ciprofloxacin",
+    "severity": "major",
+    "description": "Fluoroquinolones potentiate anticoagulant effect. Increased INR.",
+    "mechanism": "Ciprofloxacin inhibits CYP1A2, reducing anticoagulant metabolism.",
+    "recommendation": "Monitor INR closely (every 2-3 days). Adjust dose as needed.",
+    "source": "DDInter",
+    "cached_at": "2026-06-09T18:01:41.541Z"
+  }
+},
+{
+  "model": "medos.druginteraction",
+  "pk": 40,
+  "fields": {
+    "drug_a": "Acenocoumarol",
+    "drug_b": "Rifampicin",
+    "severity": "major",
+    "description": "Rifampicin dramatically reduces anticoagulant effect via enzyme induction.",
+    "mechanism": "Rifampicin induces CYP2C9, increasing anticoagulant metabolism.",
+    "recommendation": "Monitor INR frequently. May need 2-3x dose increase. Warn patient.",
+    "source": "DrugBank",
+    "cached_at": "2026-06-09T18:01:41.550Z"
+  }
+},
+{
+  "model": "medos.druginteraction",
+  "pk": 41,
+  "fields": {
+    "drug_a": "Acenocoumarol",
+    "drug_b": "Phenylbutazone",
+    "severity": "contraindicated",
+    "description": "Contraindicated. Phenylbutazone potentiates anticoagulant effect with severe bleeding risk.",
+    "mechanism": "CYP inhibition. Displaces protein binding.",
+    "recommendation": "DO NOT USE together. Choose alternative NSAID.",
+    "source": "DDInter",
+    "cached_at": "2026-06-09T18:01:41.558Z"
+  }
+},
+{
+  "model": "medos.druginteraction",
+  "pk": 42,
+  "fields": {
+    "drug_a": "Metformin",
+    "drug_b": "Glimepiride",
+    "severity": "moderate",
+    "description": "Additive hypoglycemic effect. Monitor blood glucose closely.",
+    "mechanism": "Combined biguanide + sulfonylurea increases insulin secretion and sensitivity.",
+    "recommendation": "Monitor fasting and post-prandial glucose. Educate patient on hypoglycemia symptoms.",
+    "source": "DDInter",
+    "cached_at": "2026-06-09T18:01:41.567Z"
+  }
+},
+{
+  "model": "medos.druginteraction",
+  "pk": 43,
+  "fields": {
+    "drug_a": "Metformin",
+    "drug_b": "Glipizide",
+    "severity": "moderate",
+    "description": "Additive hypoglycemic effect. Increased risk of hypoglycemia.",
+    "mechanism": "Combined biguanide + sulfonylurea action.",
+    "recommendation": "Glucose monitoring. Adjust sulfonylurea dose if needed.",
+    "source": "DrugBank",
+    "cached_at": "2026-06-09T18:01:41.575Z"
+  }
+},
+{
+  "model": "medos.druginteraction",
+  "pk": 44,
+  "fields": {
+    "drug_a": "Metformin",
+    "drug_b": "Insulin Glargine",
+    "severity": "moderate",
+    "description": "Additive glucose-lowering effect. Adjust insulin dose to avoid hypoglycemia.",
+    "mechanism": "Combined insulin sensitizer plus exogenous insulin.",
+    "recommendation": "Monitor glucose. Start insulin at low dose and titrate.",
+    "source": "DDInter",
+    "cached_at": "2026-06-09T18:01:41.583Z"
+  }
+},
+{
+  "model": "medos.druginteraction",
+  "pk": 45,
+  "fields": {
+    "drug_a": "Metformin",
+    "drug_b": "Pioglitazone",
+    "severity": "minor",
+    "description": "Additive glucose lowering. Usually a well-tolerated combination.",
+    "mechanism": "Dual insulin sensitizer effect (AMPK + PPAR-γ).",
+    "recommendation": "Monitor HbA1c. Watch for fluid retention with pioglitazone.",
+    "source": "DrugBank",
+    "cached_at": "2026-06-09T18:01:41.592Z"
+  }
+},
+{
+  "model": "medos.druginteraction",
+  "pk": 46,
+  "fields": {
+    "drug_a": "Glimepiride",
+    "drug_b": "Propranolol",
+    "severity": "moderate",
+    "description": "Beta-blockers mask hypoglycemia symptoms (tachycardia, palpitations). Increased hypoglycemia risk.",
+    "mechanism": "Beta-blockade blunts adrenergic response to hypoglycemia.",
+    "recommendation": "Warn patient about masked hypoglycemia. Monitor glucose more frequently.",
+    "source": "DDInter",
+    "cached_at": "2026-06-09T18:01:41.600Z"
+  }
+},
+{
+  "model": "medos.druginteraction",
+  "pk": 47,
+  "fields": {
+    "drug_a": "Glimepiride",
+    "drug_b": "Fluconazole",
+    "severity": "major",
+    "description": "Fluconazole increases glimepiride levels — severe hypoglycemia risk.",
+    "mechanism": "Fluconazole inhibits CYP2C9 metabolism of glimepiride.",
+    "recommendation": "Monitor glucose closely. Consider reducing glimepiride dose by 50%.",
+    "source": "OpenFDA",
+    "cached_at": "2026-06-09T18:01:41.616Z"
+  }
+},
+{
+  "model": "medos.druginteraction",
+  "pk": 48,
+  "fields": {
+    "drug_a": "Glimepiride",
+    "drug_b": "Clarithromycin",
+    "severity": "moderate",
+    "description": "Clarithromycin increases sulfonylurea levels — hypoglycemia risk.",
+    "mechanism": "CYP3A4 inhibition reduces glimepiride metabolism.",
+    "recommendation": "Monitor glucose. Consider temporary dose reduction.",
+    "source": "DDInter",
+    "cached_at": "2026-06-09T18:01:41.625Z"
+  }
+},
+{
+  "model": "medos.druginteraction",
+  "pk": 49,
+  "fields": {
+    "drug_a": "Dapagliflozin",
+    "drug_b": "Furosemide",
+    "severity": "moderate",
+    "description": "Additive volume depletion. Risk of hypotension and dehydration.",
+    "mechanism": "Combined SGLT2 inhibition + loop diuretic enhances fluid loss.",
+    "recommendation": "Monitor BP and renal function. Ensure adequate hydration.",
+    "source": "DDInter",
+    "cached_at": "2026-06-09T18:01:41.633Z"
+  }
+},
+{
+  "model": "medos.druginteraction",
+  "pk": 50,
+  "fields": {
+    "drug_a": "Empagliflozin",
+    "drug_b": "Furosemide",
+    "severity": "moderate",
+    "description": "Additive volume depletion risk. Combined diuretic effect.",
+    "mechanism": "SGLT2 inhibition + loop diuretic — synergistic fluid loss.",
+    "recommendation": "Monitor BP, electrolytes, and renal function.",
+    "source": "DrugBank",
+    "cached_at": "2026-06-09T18:01:41.642Z"
+  }
+},
+{
+  "model": "medos.druginteraction",
+  "pk": 51,
+  "fields": {
+    "drug_a": "Dapagliflozin",
+    "drug_b": "Insulin Glargine",
+    "severity": "moderate",
+    "description": "Additive glucose lowering. SGLT2 inhibitors reduce insulin dose requirement.",
+    "mechanism": "SGLT2 inhibition reduces renal glucose reabsorption, independent of insulin.",
+    "recommendation": "Reduce insulin dose by 10-20% when starting SGLT2 inhibitor. Monitor for DKA.",
+    "source": "OpenFDA",
+    "cached_at": "2026-06-09T18:01:41.650Z"
+  }
+},
+{
+  "model": "medos.druginteraction",
+  "pk": 52,
+  "fields": {
+    "drug_a": "Pioglitazone",
+    "drug_b": "Insulin Glargine",
+    "severity": "minor",
+    "description": "Additive glucose lowering. Monitor for fluid retention.",
+    "mechanism": "PPAR-γ agonist plus exogenous insulin.",
+    "recommendation": "Monitor for edema and weight gain. Reduce insulin dose if needed.",
+    "source": "DDInter",
+    "cached_at": "2026-06-09T18:01:41.659Z"
+  }
+},
+{
+  "model": "medos.druginteraction",
+  "pk": 53,
+  "fields": {
+    "drug_a": "Acarbose",
+    "drug_b": "Metformin",
+    "severity": "minor",
+    "description": "Additive glucose lowering. Well tolerated combination.",
+    "mechanism": "Alpha-glucosidase inhibition + insulin sensitizer.",
+    "recommendation": "Monitor post-prandial glucose. Treat hypoglycemia with glucose (not sucrose).",
+    "source": "DrugBank",
+    "cached_at": "2026-06-09T18:01:41.668Z"
+  }
+},
+{
+  "model": "medos.druginteraction",
+  "pk": 54,
+  "fields": {
+    "drug_a": "Rifampicin",
+    "drug_b": "Oral Contraceptives",
+    "severity": "major",
+    "description": "Rifampicin reduces contraceptive efficacy — risk of pregnancy.",
+    "mechanism": "Strong CYP3A4 induction increases estrogen/progestin metabolism.",
+    "recommendation": "Use alternative non-hormonal contraception during and for 4 weeks after rifampicin.",
+    "source": "DDInter",
+    "cached_at": "2026-06-09T18:01:41.677Z"
+  }
+},
+{
+  "model": "medos.druginteraction",
+  "pk": 55,
+  "fields": {
+    "drug_a": "Rifampicin",
+    "drug_b": "Metformin",
+    "severity": "moderate",
+    "description": "Rifampicin may reduce metformin efficacy.",
+    "mechanism": "CYP induction and possible OATP inhibition affect metformin levels.",
+    "recommendation": "Monitor blood glucose. Adjust metformin dose as needed.",
+    "source": "OpenFDA",
+    "cached_at": "2026-06-09T18:01:41.686Z"
+  }
+},
+{
+  "model": "medos.druginteraction",
+  "pk": 56,
+  "fields": {
+    "drug_a": "Rifampicin",
+    "drug_b": "Dapagliflozin",
+    "severity": "moderate",
+    "description": "Rifampicin may reduce dapagliflozin efficacy via UGT induction.",
+    "mechanism": "UGT1A9 and UGT2B4 induction by rifampicin increases dapagliflozin metabolism.",
+    "recommendation": "Monitor glucose. Consider dose adjustment.",
+    "source": "DrugBank",
+    "cached_at": "2026-06-09T18:01:41.695Z"
+  }
+},
+{
+  "model": "medos.druginteraction",
+  "pk": 57,
+  "fields": {
+    "drug_a": "Isoniazid",
+    "drug_b": "Rifampicin",
+    "severity": "moderate",
+    "description": "Combined hepatotoxicity risk. Rifampicin increases INH metabolite toxicity.",
+    "mechanism": "Rifampicin induces hydrazine formation from INH, increasing liver injury risk.",
+    "recommendation": "Monitor LFTs monthly. Warn patient about symptoms of hepatitis.",
+    "source": "DDInter",
+    "cached_at": "2026-06-09T18:01:41.704Z"
+  }
+},
+{
+  "model": "medos.druginteraction",
+  "pk": 58,
+  "fields": {
+    "drug_a": "Isoniazid",
+    "drug_b": "Carbamazepine",
+    "severity": "major",
+    "description": "INH increases carbamazepine levels — toxicity risk (ataxia, dizziness, sedation).",
+    "mechanism": "INH inhibits CYP3A4, reducing carbamazepine metabolism.",
+    "recommendation": "Monitor carbamazepine levels. Reduce dose by 20-30% if needed.",
+    "source": "DrugBank",
+    "cached_at": "2026-06-09T18:01:41.713Z"
+  }
+},
+{
+  "model": "medos.druginteraction",
+  "pk": 59,
+  "fields": {
+    "drug_a": "Isoniazid",
+    "drug_b": "Phenytoin",
+    "severity": "major",
+    "description": "INH increases phenytoin levels — toxicity risk.",
+    "mechanism": "INH inhibits CYP2C9/2C19, reducing phenytoin metabolism.",
+    "recommendation": "Monitor phenytoin levels. Reduce phenytoin dose by 30%.",
+    "source": "DDInter",
+    "cached_at": "2026-06-09T18:01:41.723Z"
+  }
+},
+{
+  "model": "medos.druginteraction",
+  "pk": 60,
+  "fields": {
+    "drug_a": "Metronidazole",
+    "drug_b": "Alcohol",
+    "severity": "major",
+    "description": "Disulfiram-like reaction: severe nausea, vomiting, flushing, headache.",
+    "mechanism": "Metronidazole inhibits aldehyde dehydrogenase, causing acetaldehyde accumulation.",
+    "recommendation": "Advise complete avoidance of alcohol during treatment and for 48h after last dose.",
+    "source": "DrugBank",
+    "cached_at": "2026-06-09T18:01:41.731Z"
+  }
+},
+{
+  "model": "medos.druginteraction",
+  "pk": 61,
+  "fields": {
+    "drug_a": "Levofloxacin",
+    "drug_b": "NSAIDs",
+    "severity": "moderate",
+    "description": "Increased CNS stimulation risk (seizures, dizziness). Avoid in epilepsy.",
+    "mechanism": "GABA-A receptor antagonism is potentiated by NSAIDs.",
+    "recommendation": "Avoid combination in patients with seizure history. Use caution.",
+    "source": "DDInter",
+    "cached_at": "2026-06-09T18:01:41.741Z"
+  }
+},
+{
+  "model": "medos.druginteraction",
+  "pk": 62,
+  "fields": {
+    "drug_a": "Ciprofloxacin",
+    "drug_b": "Theophylline",
+    "severity": "major",
+    "description": "Ciprofloxacin increases theophylline levels — toxicity risk (seizures, arrhythmias).",
+    "mechanism": "Ciprofloxacin inhibits CYP1A2, reducing theophylline clearance by 30-50%.",
+    "recommendation": "Reduce theophylline dose by 50%. Monitor theophylline levels.",
+    "source": "DDInter",
+    "cached_at": "2026-06-09T18:01:41.750Z"
+  }
+},
+{
+  "model": "medos.druginteraction",
+  "pk": 63,
+  "fields": {
+    "drug_a": "Levofloxacin",
+    "drug_b": "Theophylline",
+    "severity": "moderate",
+    "description": "Levofloxacin may increase theophylline levels. Less interaction than ciprofloxacin.",
+    "mechanism": "Weak CYP1A2 inhibition.",
+    "recommendation": "Monitor theophylline levels. Dose adjustment may not be needed.",
+    "source": "DrugBank",
+    "cached_at": "2026-06-09T18:01:41.759Z"
+  }
+},
+{
+  "model": "medos.druginteraction",
+  "pk": 64,
+  "fields": {
+    "drug_a": "Azithromycin",
+    "drug_b": "Digoxin",
+    "severity": "moderate",
+    "description": "Azithromycin may increase digoxin levels via P-gp inhibition.",
+    "mechanism": "P-glycoprotein inhibition in gut reduces digoxin efflux, increasing absorption.",
+    "recommendation": "Monitor digoxin levels. Watch for signs of digoxin toxicity.",
+    "source": "DDInter",
+    "cached_at": "2026-06-09T18:01:41.768Z"
+  }
+},
+{
+  "model": "medos.druginteraction",
+  "pk": 65,
+  "fields": {
+    "drug_a": "Azithromycin",
+    "drug_b": "Atorvastatin",
+    "severity": "moderate",
+    "description": "Azithromycin may increase statin levels — myopathy risk.",
+    "mechanism": "Macrolide inhibits CYP3A4 metabolism of statins.",
+    "recommendation": "Monitor for muscle pain. Consider temporary statin dose reduction.",
+    "source": "OpenFDA",
+    "cached_at": "2026-06-09T18:01:41.777Z"
+  }
+},
+{
+  "model": "medos.druginteraction",
+  "pk": 66,
+  "fields": {
+    "drug_a": "Clarithromycin",
+    "drug_b": "Atorvastatin",
+    "severity": "major",
+    "description": "Clarithromycin significantly increases atorvastatin levels — rhabdomyolysis risk.",
+    "mechanism": "Strong CYP3A4 inhibition by clarithromycin.",
+    "recommendation": "Use azithromycin instead. If unavoidable, hold statin during clarithromycin course.",
+    "source": "DDInter",
+    "cached_at": "2026-06-09T18:01:41.786Z"
+  }
+},
+{
+  "model": "medos.druginteraction",
+  "pk": 67,
+  "fields": {
+    "drug_a": "Fluconazole",
+    "drug_b": "Atorvastatin",
+    "severity": "moderate",
+    "description": "Fluconazole increases statin levels — myopathy risk.",
+    "mechanism": "CYP3A4 and CYP2C9 inhibition by fluconazole.",
+    "recommendation": "Monitor for muscle pain. Consider reducing statin dose.",
+    "source": "DrugBank",
+    "cached_at": "2026-06-09T18:01:41.795Z"
+  }
+},
+{
+  "model": "medos.druginteraction",
+  "pk": 68,
+  "fields": {
+    "drug_a": "Fluconazole",
+    "drug_b": "Losartan",
+    "severity": "moderate",
+    "description": "Fluconazole reduces losartan active metabolite formation — reduced efficacy.",
+    "mechanism": "CYP2C9 inhibition blocks conversion to active E-3174 metabolite.",
+    "recommendation": "Monitor BP. Consider alternative ARB or increase losartan dose.",
+    "source": "DDInter",
+    "cached_at": "2026-06-09T18:01:41.804Z"
+  }
+},
+{
+  "model": "medos.druginteraction",
+  "pk": 69,
+  "fields": {
+    "drug_a": "Artesunate",
+    "drug_b": "Mefloquine",
+    "severity": "moderate",
+    "description": "May reduce artesunate efficacy. Increased ECG monitoring recommended.",
+    "mechanism": "Possible pharmacodynamic antagonism. QT prolongation additive.",
+    "recommendation": "Monitor ECG. Use alternative partner drug if possible.",
+    "source": "DDInter",
+    "cached_at": "2026-06-09T18:01:41.813Z"
+  }
+},
+{
+  "model": "medos.druginteraction",
+  "pk": 70,
+  "fields": {
+    "drug_a": "Artesunate",
+    "drug_b": "Amiodarone",
+    "severity": "major",
+    "description": "Additive QT prolongation — risk of torsades de pointes.",
+    "mechanism": "Both drugs prolong ventricular repolarization.",
+    "recommendation": "Avoid combination. If unavoidable, monitor ECG and K+/Mg+.",
+    "source": "OpenFDA",
+    "cached_at": "2026-06-09T18:01:41.822Z"
+  }
+},
+{
+  "model": "medos.druginteraction",
+  "pk": 71,
+  "fields": {
+    "drug_a": "Tenofovir",
+    "drug_b": "Acyclovir",
+    "severity": "moderate",
+    "description": "Additive nephrotoxicity. Both drugs are renally excreted.",
+    "mechanism": "Competition for renal tubular secretion.",
+    "recommendation": "Monitor renal function. Ensure adequate hydration.",
+    "source": "DrugBank",
+    "cached_at": "2026-06-09T18:01:41.830Z"
+  }
+},
+{
+  "model": "medos.druginteraction",
+  "pk": 72,
+  "fields": {
+    "drug_a": "Diclofenac",
+    "drug_b": "Aspirin",
+    "severity": "moderate",
+    "description": "Increased GI bleeding risk. Additive COX inhibition.",
+    "mechanism": "Additive COX-1 inhibition leads to gastric mucosal damage.",
+    "recommendation": "Avoid combination. Add PPI if needed. Use single NSAID.",
+    "source": "DDInter",
+    "cached_at": "2026-06-09T18:01:41.839Z"
+  }
+},
+{
+  "model": "medos.druginteraction",
+  "pk": 73,
+  "fields": {
+    "drug_a": "Diclofenac",
+    "drug_b": "Ibuprofen",
+    "severity": "moderate",
+    "description": "No added benefit, increased GI and renal toxicity.",
+    "mechanism": "Additive COX inhibition with no additional analgesia.",
+    "recommendation": "Do NOT combine. Choose one NSAID at appropriate dose.",
+    "source": "DrugBank",
+    "cached_at": "2026-06-09T18:01:41.848Z"
+  }
+},
+{
+  "model": "medos.druginteraction",
+  "pk": 74,
+  "fields": {
+    "drug_a": "Ibuprofen",
+    "drug_b": "Paracetamol",
+    "severity": "minor",
+    "description": "Generally safe combination. Alternate for better pain control.",
+    "mechanism": "Different analgesic mechanisms — COX inhibition + central COX-3.",
+    "recommendation": "Commonly used combination in Indian practice. Safe at recommended doses.",
+    "source": "DrugBank",
+    "cached_at": "2026-06-09T18:01:41.857Z"
+  }
+},
+{
+  "model": "medos.druginteraction",
+  "pk": 75,
+  "fields": {
+    "drug_a": "Diclofenac",
+    "drug_b": "Paracetamol",
+    "severity": "minor",
+    "description": "Common combination in Indian practice. Generally safe short-term.",
+    "mechanism": "Synergistic analgesia via COX and central pathways.",
+    "recommendation": "Safe for short-term use. Avoid in active PUD.",
+    "source": "DDInter",
+    "cached_at": "2026-06-09T18:01:41.866Z"
+  }
+},
+{
+  "model": "medos.druginteraction",
+  "pk": 76,
+  "fields": {
+    "drug_a": "Diclofenac",
+    "drug_b": "Ramipril",
+    "severity": "moderate",
+    "description": "NSAIDs reduce antihypertensive efficacy of ACE inhibitors. Risk of renal impairment.",
+    "mechanism": "NSAIDs inhibit prostaglandin synthesis needed for ACE inhibitor action.",
+    "recommendation": "Monitor BP and renal function. Consider alternative analgesia.",
+    "source": "DDInter",
+    "cached_at": "2026-06-09T18:01:41.881Z"
+  }
+},
+{
+  "model": "medos.druginteraction",
+  "pk": 77,
+  "fields": {
+    "drug_a": "Ibuprofen",
+    "drug_b": "Telmisartan",
+    "severity": "moderate",
+    "description": "NSAIDs reduce ARB antihypertensive effect. Risk of acute kidney injury.",
+    "mechanism": "Prostaglandin inhibition reduces vasodilatory effect of ARBs.",
+    "recommendation": "Monitor BP. Use lowest NSAID dose. Stay hydrated.",
+    "source": "DrugBank",
+    "cached_at": "2026-06-09T18:01:41.890Z"
+  }
+},
+{
+  "model": "medos.druginteraction",
+  "pk": 78,
+  "fields": {
+    "drug_a": "Diclofenac",
+    "drug_b": "Furosemide",
+    "severity": "moderate",
+    "description": "NSAIDs reduce diuretic efficacy and increase nephrotoxicity risk.",
+    "mechanism": "COX inhibition reduces prostaglandin-mediated renal blood flow.",
+    "recommendation": "Monitor renal function and urine output. Consider alternative analgesia.",
+    "source": "DDInter",
+    "cached_at": "2026-06-09T18:01:41.899Z"
+  }
+},
+{
+  "model": "medos.druginteraction",
+  "pk": 79,
+  "fields": {
+    "drug_a": "Tramadol",
+    "drug_b": "Amitriptyline",
+    "severity": "major",
+    "description": "Increased risk of serotonin syndrome and seizures. Both lower seizure threshold.",
+    "mechanism": "Additive serotonergic effect. Both inhibit serotonin reuptake.",
+    "recommendation": "Avoid combination. Use alternative analgesic if patient is on TCAs.",
+    "source": "DDInter",
+    "cached_at": "2026-06-09T18:01:41.909Z"
+  }
+},
+{
+  "model": "medos.druginteraction",
+  "pk": 80,
+  "fields": {
+    "drug_a": "Tramadol",
+    "drug_b": "Fluoxetine",
+    "severity": "major",
+    "description": "Serotonin syndrome risk: agitation, hyperthermia, clonus, hyperreflexia.",
+    "mechanism": "Additive serotonin reuptake inhibition.",
+    "recommendation": "Avoid. Use non-opioid analgesic. If unavoidable, start at lowest dose and monitor.",
+    "source": "DDInter",
+    "cached_at": "2026-06-09T18:01:41.918Z"
+  }
+},
+{
+  "model": "medos.druginteraction",
+  "pk": 81,
+  "fields": {
+    "drug_a": "Tramadol",
+    "drug_b": "Escitalopram",
+    "severity": "major",
+    "description": "Serotonin syndrome risk with SSRI + tramadol combination.",
+    "mechanism": "Additive serotonin reuptake inhibition.",
+    "recommendation": "Avoid combination. Choose alternative analgesic.",
+    "source": "OpenFDA",
+    "cached_at": "2026-06-09T18:01:41.927Z"
+  }
+},
+{
+  "model": "medos.druginteraction",
+  "pk": 82,
+  "fields": {
+    "drug_a": "Tramadol",
+    "drug_b": "Ondansetron",
+    "severity": "moderate",
+    "description": "Increased serotonin syndrome risk. Ondansetron is a 5-HT3 antagonist.",
+    "mechanism": "Complex serotonergic interaction — ondansetron may reduce tramadol efficacy.",
+    "recommendation": "Monitor for serotonin toxicity. Consider alternative antiemetic.",
+    "source": "DDInter",
+    "cached_at": "2026-06-09T18:01:41.936Z"
+  }
+},
+{
+  "model": "medos.druginteraction",
+  "pk": 83,
+  "fields": {
+    "drug_a": "Gabapentin",
+    "drug_b": "Amitriptyline",
+    "severity": "moderate",
+    "description": "Additive sedation and dizziness. Common neuropathic pain combination.",
+    "mechanism": "Synergistic CNS depression.",
+    "recommendation": "Start at low doses. Warn about driving/machinery. Common but safe if titrated.",
+    "source": "DrugBank",
+    "cached_at": "2026-06-09T18:01:41.946Z"
+  }
+},
+{
+  "model": "medos.druginteraction",
+  "pk": 84,
+  "fields": {
+    "drug_a": "Pregabalin",
+    "drug_b": "Clonazepam",
+    "severity": "moderate",
+    "description": "Additive CNS depression — excessive sedation, reduced coordination.",
+    "mechanism": "GABAergic potentiation plus calcium channel modulation.",
+    "recommendation": "Reduce doses of both. Warn about driving and falls.",
+    "source": "DDInter",
+    "cached_at": "2026-06-09T18:01:41.955Z"
+  }
+},
+{
+  "model": "medos.druginteraction",
+  "pk": 85,
+  "fields": {
+    "drug_a": "Gabapentin",
+    "drug_b": "Codeine",
+    "severity": "moderate",
+    "description": "Additive respiratory depression and sedation risk.",
+    "mechanism": "Synergistic CNS depression via GABA and opioid receptors.",
+    "recommendation": "Monitor for excessive sedation. Reduce doses in elderly.",
+    "source": "OpenFDA",
+    "cached_at": "2026-06-09T18:01:41.964Z"
+  }
+},
+{
+  "model": "medos.druginteraction",
+  "pk": 86,
+  "fields": {
+    "drug_a": "Pantoprazole",
+    "drug_b": "Methotrexate",
+    "severity": "moderate",
+    "description": "PPIs may reduce methotrexate clearance — toxicity risk.",
+    "mechanism": "Competitive inhibition of renal tubular secretion.",
+    "recommendation": "Withhold PPI during high-dose methotrexate. Monitor levels.",
+    "source": "DrugBank",
+    "cached_at": "2026-06-09T18:01:41.975Z"
+  }
+},
+{
+  "model": "medos.druginteraction",
+  "pk": 87,
+  "fields": {
+    "drug_a": "Domperidone",
+    "drug_b": "Amiodarone",
+    "severity": "contraindicated",
+    "description": "Contraindicated: additive QT prolongation, risk of torsades de pointes.",
+    "mechanism": "Both drugs block hERG K+ channels, prolonging QT interval.",
+    "recommendation": "DO NOT COMBINE. Use alternative antiemetic (ondansetron).",
+    "source": "DDInter",
+    "cached_at": "2026-06-09T18:01:41.984Z"
+  }
+},
+{
+  "model": "medos.druginteraction",
+  "pk": 88,
+  "fields": {
+    "drug_a": "Domperidone",
+    "drug_b": "Levofloxacin",
+    "severity": "major",
+    "description": "Additive QT prolongation. Risk of cardiac arrhythmias.",
+    "mechanism": "Combined hERG channel blockade.",
+    "recommendation": "Monitor ECG. Use alternative antiemetic or antibiotic if possible.",
+    "source": "OpenFDA",
+    "cached_at": "2026-06-09T18:01:41.993Z"
+  }
+},
+{
+  "model": "medos.druginteraction",
+  "pk": 89,
+  "fields": {
+    "drug_a": "Domperidone",
+    "drug_b": "Azithromycin",
+    "severity": "moderate",
+    "description": "Both drugs prolong QT interval. Moderate risk.",
+    "mechanism": "hERG K+ channel blockade additive effect.",
+    "recommendation": "Use in caution. Monitor ECG in elderly or those with cardiac disease.",
+    "source": "DrugBank",
+    "cached_at": "2026-06-09T18:01:42.003Z"
+  }
+},
+{
+  "model": "medos.druginteraction",
+  "pk": 90,
+  "fields": {
+    "drug_a": "Sucralfate",
+    "drug_b": "Ciprofloxacin",
+    "severity": "moderate",
+    "description": "Sucralfate reduces fluoroquinolone absorption by >50%.",
+    "mechanism": "Cationic binding — sucralfate contains aluminum ions that chelate quinolones.",
+    "recommendation": "Space doses: ciprofloxacin 2h before or 6h after sucralfate.",
+    "source": "DDInter",
+    "cached_at": "2026-06-09T18:01:42.012Z"
+  }
+},
+{
+  "model": "medos.druginteraction",
+  "pk": 91,
+  "fields": {
+    "drug_a": "Sucralfate",
+    "drug_b": "Thyroxine",
+    "severity": "major",
+    "description": "Sucralfate reduces thyroxine absorption — may worsen hypothyroidism.",
+    "mechanism": "Physical binding and reduced GI absorption.",
+    "recommendation": "Space by at least 4 hours. Monitor TSH in 6-8 weeks.",
+    "source": "DrugBank",
+    "cached_at": "2026-06-09T18:01:42.021Z"
+  }
+},
+{
+  "model": "medos.druginteraction",
+  "pk": 92,
+  "fields": {
+    "drug_a": "Antacids",
+    "drug_b": "Ciprofloxacin",
+    "severity": "moderate",
+    "description": "Mg/Al-containing antacids reduce fluoroquinolone absorption by 50-90%.",
+    "mechanism": "Cation chelation of quinolone ring.",
+    "recommendation": "Take ciprofloxacin 2h before or 4h after antacid.",
+    "source": "DDInter",
+    "cached_at": "2026-06-09T18:01:42.031Z"
+  }
+},
+{
+  "model": "medos.druginteraction",
+  "pk": 93,
+  "fields": {
+    "drug_a": "Ondansetron",
+    "drug_b": "Tramadol",
+    "severity": "moderate",
+    "description": "Ondansetron may reduce tramadol's analgesic efficacy. Serotonin syndrome risk.",
+    "mechanism": "5-HT3 antagonism may block tramadol's serotonergic analgesia.",
+    "recommendation": "Monitor pain control. Consider alternative antiemetic.",
+    "source": "OpenFDA",
+    "cached_at": "2026-06-09T18:01:42.041Z"
+  }
+},
+{
+  "model": "medos.druginteraction",
+  "pk": 94,
+  "fields": {
+    "drug_a": "Theophylline",
+    "drug_b": "Ciprofloxacin",
+    "severity": "major",
+    "description": "Ciprofloxacin increases theophylline levels by 30-50% — toxicity risk.",
+    "mechanism": "CYP1A2 inhibition reduces theophylline clearance.",
+    "recommendation": "Reduce theophylline dose by 50%. Monitor levels. Consider alternative antibiotic.",
+    "source": "DDInter",
+    "cached_at": "2026-06-09T18:01:42.050Z"
+  }
+},
+{
+  "model": "medos.druginteraction",
+  "pk": 95,
+  "fields": {
+    "drug_a": "Deriphyllin",
+    "drug_b": "Ciprofloxacin",
+    "severity": "major",
+    "description": "Ciprofloxacin increases deriphylline levels — toxicity risk.",
+    "mechanism": "CYP1A2 inhibition.",
+    "recommendation": "Reduce dose. Monitor for nausea, palpitations, seizures.",
+    "source": "DDInter",
+    "cached_at": "2026-06-09T18:01:42.059Z"
+  }
+},
+{
+  "model": "medos.druginteraction",
+  "pk": 96,
+  "fields": {
+    "drug_a": "Theophylline",
+    "drug_b": "Propranolol",
+    "severity": "moderate",
+    "description": "Beta-blockers reduce theophylline clearance and oppose bronchodilation.",
+    "mechanism": "Pharmacodynamic antagonism on bronchial smooth muscle.",
+    "recommendation": "Use cardioselective beta-blocker if needed. Monitor theophylline levels.",
+    "source": "DrugBank",
+    "cached_at": "2026-06-09T18:01:42.069Z"
+  }
+},
+{
+  "model": "medos.druginteraction",
+  "pk": 97,
+  "fields": {
+    "drug_a": "Montelukast",
+    "drug_b": "Aspirin",
+    "severity": "minor",
+    "description": "Aspirin may exacerbate asthma in sensitive patients. No direct interaction.",
+    "mechanism": "Aspirin-sensitive asthma — leukotriene pathway.",
+    "recommendation": "Warn about aspirin use in asthma. Montelukast may partially protect.",
+    "source": "DrugBank",
+    "cached_at": "2026-06-09T18:01:42.078Z"
+  }
+},
+{
+  "model": "medos.druginteraction",
+  "pk": 98,
+  "fields": {
+    "drug_a": "Fluoxetine",
+    "drug_b": "Linezolid",
+    "severity": "contraindicated",
+    "description": "Contraindicated: serotonin syndrome risk with MAO inhibitor activity.",
+    "mechanism": "Linezolid has MAOI activity. Combined with SSRI causes serotonin excess.",
+    "recommendation": "DO NOT COMBINE. Choose alternative antibiotic.",
+    "source": "DDInter",
+    "cached_at": "2026-06-09T18:01:42.088Z"
+  }
+},
+{
+  "model": "medos.druginteraction",
+  "pk": 99,
+  "fields": {
+    "drug_a": "Escitalopram",
+    "drug_b": "Linezolid",
+    "severity": "contraindicated",
+    "description": "Contraindicated: serotonin syndrome risk with MAO inhibitor activity.",
+    "mechanism": "Linezolid MAOI + SSRI = serotonin excess.",
+    "recommendation": "DO NOT COMBINE. Choose alternative antibiotic.",
+    "source": "OpenFDA",
+    "cached_at": "2026-06-09T18:01:42.097Z"
+  }
+},
+{
+  "model": "medos.druginteraction",
+  "pk": 100,
+  "fields": {
+    "drug_a": "Sertraline",
+    "drug_b": "Linezolid",
+    "severity": "contraindicated",
+    "description": "Contraindicated: serotonin syndrome risk.",
+    "mechanism": "MAO inhibitor activity of linezolid plus SSRI.",
+    "recommendation": "DO NOT COMBINE. Use alternative antibiotic.",
+    "source": "DrugBank",
+    "cached_at": "2026-06-09T18:01:42.107Z"
+  }
+},
+{
+  "model": "medos.druginteraction",
+  "pk": 101,
+  "fields": {
+    "drug_a": "Escitalopram",
+    "drug_b": "Diclofenac",
+    "severity": "moderate",
+    "description": "Increased bleeding risk. SSRIs impair platelet function; NSAIDs add GI bleeding.",
+    "mechanism": "SSRI depletes platelet serotonin. NSAIDs inhibit COX-1.",
+    "recommendation": "Add PPI for gastroprotection. Monitor for bruising/bleeding.",
+    "source": "DDInter",
+    "cached_at": "2026-06-09T18:01:42.117Z"
+  }
+},
+{
+  "model": "medos.druginteraction",
+  "pk": 102,
+  "fields": {
+    "drug_a": "Fluoxetine",
+    "drug_b": "Diclofenac",
+    "severity": "moderate",
+    "description": "Increased bleeding risk. SSRI + NSAID combination.",
+    "mechanism": "Impaired platelet aggregation plus GI mucosal injury.",
+    "recommendation": "Consider gastroprotection. Monitor for GI bleeding.",
+    "source": "OpenFDA",
+    "cached_at": "2026-06-09T18:01:42.127Z"
+  }
+},
+{
+  "model": "medos.druginteraction",
+  "pk": 103,
+  "fields": {
+    "drug_a": "Sertraline",
+    "drug_b": "Aspirin",
+    "severity": "moderate",
+    "description": "Increased bleeding risk. Additive effect on platelet function.",
+    "mechanism": "SSRI depletes platelet serotonin + aspirin irreversibly inhibits COX-1.",
+    "recommendation": "Consider PPI. Monitor for signs of bleeding.",
+    "source": "DDInter",
+    "cached_at": "2026-06-09T18:01:42.143Z"
+  }
+},
+{
+  "model": "medos.druginteraction",
+  "pk": 104,
+  "fields": {
+    "drug_a": "Phenytoin",
+    "drug_b": "Metronidazole",
+    "severity": "major",
+    "description": "Metronidazole increases phenytoin levels — toxicity risk.",
+    "mechanism": "CYP2C9/2C19 inhibition by metronidazole.",
+    "recommendation": "Monitor phenytoin levels. Reduce dose if needed.",
+    "source": "DDInter",
+    "cached_at": "2026-06-09T18:01:42.152Z"
+  }
+},
+{
+  "model": "medos.druginteraction",
+  "pk": 105,
+  "fields": {
+    "drug_a": "Phenytoin",
+    "drug_b": "Fluconazole",
+    "severity": "major",
+    "description": "Fluconazole significantly increases phenytoin levels — toxicity risk.",
+    "mechanism": "CYP2C9 inhibition reduces phenytoin clearance.",
+    "recommendation": "Monitor phenytoin levels. May need 30-50% dose reduction.",
+    "source": "DrugBank",
+    "cached_at": "2026-06-09T18:01:42.161Z"
+  }
+},
+{
+  "model": "medos.druginteraction",
+  "pk": 106,
+  "fields": {
+    "drug_a": "Valproate",
+    "drug_b": "Aspirin",
+    "severity": "moderate",
+    "description": "Aspirin displaces valproate from protein binding — increased free fraction, toxicity risk.",
+    "mechanism": "Protein binding displacement and beta-oxidation inhibition.",
+    "recommendation": "Monitor valproate levels. Watch for sedation, tremor, hepatotoxicity.",
+    "source": "DDInter",
+    "cached_at": "2026-06-09T18:01:42.170Z"
+  }
+},
+{
+  "model": "medos.druginteraction",
+  "pk": 107,
+  "fields": {
+    "drug_a": "Valproate",
+    "drug_b": "Clonazepam",
+    "severity": "moderate",
+    "description": "Additive CNS depression. Both potentiate GABA.",
+    "mechanism": "Synergistic GABAergic effect.",
+    "recommendation": "Monitor sedation. Use lowest effective doses.",
+    "source": "DrugBank",
+    "cached_at": "2026-06-09T18:01:42.180Z"
+  }
+},
+{
+  "model": "medos.druginteraction",
+  "pk": 108,
+  "fields": {
+    "drug_a": "Carbamazepine",
+    "drug_b": "Oral Contraceptives",
+    "severity": "major",
+    "description": "Carbamazepine reduces contraceptive efficacy via CYP3A4 induction.",
+    "mechanism": "Strong CYP3A4 induction increases estrogen/progestin clearance.",
+    "recommendation": "Use alternative contraception (higher-dose pill or non-hormonal).",
+    "source": "DDInter",
+    "cached_at": "2026-06-09T18:01:42.189Z"
+  }
+},
+{
+  "model": "medos.druginteraction",
+  "pk": 109,
+  "fields": {
+    "drug_a": "Carbamazepine",
+    "drug_b": "Atorvastatin",
+    "severity": "moderate",
+    "description": "Carbamazepine reduces statin levels — reduced efficacy.",
+    "mechanism": "CYP3A4 induction increases statin metabolism.",
+    "recommendation": "Monitor lipids. Consider increasing statin dose or using rosuvastatin.",
+    "source": "OpenFDA",
+    "cached_at": "2026-06-09T18:01:42.200Z"
+  }
+},
+{
+  "model": "medos.druginteraction",
+  "pk": 110,
+  "fields": {
+    "drug_a": "Olanzapine",
+    "drug_b": "Ciprofloxacin",
+    "severity": "moderate",
+    "description": "Ciprofloxacin increases olanzapine levels — sedation and metabolic effects.",
+    "mechanism": "CYP1A2 inhibition reduces olanzapine clearance.",
+    "recommendation": "Monitor for increased sedation. Consider reducing olanzapine dose.",
+    "source": "DDInter",
+    "cached_at": "2026-06-09T18:01:42.209Z"
+  }
+},
+{
+  "model": "medos.druginteraction",
+  "pk": 111,
+  "fields": {
+    "drug_a": "Olanzapine",
+    "drug_b": "Fluoxetine",
+    "severity": "minor",
+    "description": "Fluoxetine may increase olanzapine levels. Usually well tolerated.",
+    "mechanism": "CYP2D6 and CYP1A2 interactions.",
+    "recommendation": "Monitor weight and metabolic parameters. Common combination.",
+    "source": "DrugBank",
+    "cached_at": "2026-06-09T18:01:42.219Z"
+  }
+},
+{
+  "model": "medos.druginteraction",
+  "pk": 112,
+  "fields": {
+    "drug_a": "Thyroxine",
+    "drug_b": "Omeprazole",
+    "severity": "moderate",
+    "description": "PPIs reduce thyroxine absorption — may worsen hypothyroidism.",
+    "mechanism": "Gastric pH elevation reduces thyroxine dissolution and absorption.",
+    "recommendation": "Take thyroxine on empty stomach, 30 min before PPI. Monitor TSH.",
+    "source": "DDInter",
+    "cached_at": "2026-06-09T18:01:42.229Z"
+  }
+},
+{
+  "model": "medos.druginteraction",
+  "pk": 113,
+  "fields": {
+    "drug_a": "Thyroxine",
+    "drug_b": "Calcium Carbonate",
+    "severity": "moderate",
+    "description": "Calcium supplements reduce thyroxine absorption by 20-25%.",
+    "mechanism": "Chelation of thyroxine molecules with calcium ions.",
+    "recommendation": "Space by at least 4 hours. Common in postmenopausal women on both.",
+    "source": "DrugBank",
+    "cached_at": "2026-06-09T18:01:42.239Z"
+  }
+},
+{
+  "model": "medos.druginteraction",
+  "pk": 114,
+  "fields": {
+    "drug_a": "Thyroxine",
+    "drug_b": "Ferrous Sulfate",
+    "severity": "moderate",
+    "description": "Iron supplements reduce thyroxine absorption significantly.",
+    "mechanism": "Physical binding between iron and thyroxine in GI tract.",
+    "recommendation": "Space by at least 4 hours. Common in anemia + hypothyroidism patients.",
+    "source": "DDInter",
+    "cached_at": "2026-06-09T18:01:42.248Z"
+  }
+},
+{
+  "model": "medos.druginteraction",
+  "pk": 115,
+  "fields": {
+    "drug_a": "Carbimazole",
+    "drug_b": "Warfarin",
+    "severity": "moderate",
+    "description": "Antithyroid drugs reduce anticoagulant effect when hyperthyroid state corrects.",
+    "mechanism": "Metabolic changes as thyroid normalizes affect clotting factor synthesis.",
+    "recommendation": "Monitor INR frequently when starting carbimazole in warfarin patients.",
+    "source": "OpenFDA",
+    "cached_at": "2026-06-09T18:01:42.258Z"
+  }
+},
+{
+  "model": "medos.druginteraction",
+  "pk": 116,
+  "fields": {
+    "drug_a": "Propylthiouracil",
+    "drug_b": "Warfarin",
+    "severity": "moderate",
+    "description": "PTU potentiates warfarin effect — increased INR and bleeding risk.",
+    "mechanism": "Reduced vitamin K-dependent clotting factor metabolism.",
+    "recommendation": "Monitor INR. Reduce warfarin dose as thyroid function normalizes.",
+    "source": "DDInter",
+    "cached_at": "2026-06-09T18:01:42.268Z"
+  }
+},
+{
+  "model": "medos.druginteraction",
+  "pk": 117,
+  "fields": {
+    "drug_a": "Acenocoumarol",
+    "drug_b": "Clopidogrel",
+    "severity": "contraindicated",
+    "description": "Contraindicated: triple therapy bleeding risk unless essential (e.g., recent stent).",
+    "mechanism": "Dual anticoagulation + antiplatelet = multiplicative bleeding risk.",
+    "recommendation": "Avoid unless indicated for mechanical valve + recent stent. Monitor INR closely.",
+    "source": "DDInter",
+    "cached_at": "2026-06-09T18:01:42.277Z"
+  }
+},
+{
+  "model": "medos.druginteraction",
+  "pk": 118,
+  "fields": {
+    "drug_a": "Acenocoumarol",
+    "drug_b": "Diclofenac",
+    "severity": "major",
+    "description": "NSAIDs with anticoagulant — significantly increased GI and systemic bleeding.",
+    "mechanism": "COX-1 inhibition plus anticoagulation.",
+    "recommendation": "Use paracetamol for analgesia. Add PPI if NSAID unavoidable.",
+    "source": "DrugBank",
+    "cached_at": "2026-06-09T18:01:42.286Z"
+  }
+},
+{
+  "model": "medos.druginteraction",
+  "pk": 119,
+  "fields": {
+    "drug_a": "Acenocoumarol",
+    "drug_b": "Amoxicillin",
+    "severity": "moderate",
+    "description": "Broad-spectrum antibiotics can potentiate anticoagulant effect.",
+    "mechanism": "Gut flora reduction decreases vitamin K synthesis.",
+    "recommendation": "Monitor INR during and 1-2 weeks after antibiotic course.",
+    "source": "DDInter",
+    "cached_at": "2026-06-09T18:01:42.296Z"
+  }
+},
+{
+  "model": "medos.druginteraction",
+  "pk": 120,
+  "fields": {
+    "drug_a": "Enoxaparin",
+    "drug_b": "Aspirin",
+    "severity": "major",
+    "description": "Increased bleeding risk with LMWH + antiplatelet combination.",
+    "mechanism": "Additive anticoagulant and antiplatelet effects.",
+    "recommendation": "Monitor for bleeding. Use lowest effective doses. Common in ACS protocols.",
+    "source": "DDInter",
+    "cached_at": "2026-06-09T18:01:42.305Z"
+  }
+},
+{
+  "model": "medos.druginteraction",
+  "pk": 121,
+  "fields": {
+    "drug_a": "Tranexamic Acid",
+    "drug_b": "Oral Contraceptives",
+    "severity": "moderate",
+    "description": "Increased thrombotic risk with tranexamic acid + estrogen combination.",
+    "mechanism": "Additive prothrombotic effect.",
+    "recommendation": "Avoid in women on OCPs. Use alternative haemostatic agent.",
+    "source": "DrugBank",
+    "cached_at": "2026-06-09T18:01:42.314Z"
+  }
+},
+{
+  "model": "medos.druginteraction",
+  "pk": 122,
+  "fields": {
+    "drug_a": "Tranexamic Acid",
+    "drug_b": "Enoxaparin",
+    "severity": "moderate",
+    "description": "Theoretical opposing effects. Tranexamic acid may reduce anticoagulant effect.",
+    "mechanism": "Antifibrinolytic agent opposes LMWH's anticoagulant action.",
+    "recommendation": "Use with caution. Monitor for thrombotic/thrombolytic balance.",
+    "source": "DDInter",
+    "cached_at": "2026-06-09T18:01:42.325Z"
+  }
+},
+{
+  "model": "medos.druginteraction",
+  "pk": 123,
+  "fields": {
+    "drug_a": "Levocetirizine",
+    "drug_b": "Alcohol",
+    "severity": "minor",
+    "description": "Mild additive sedation. Less sedating than cetirizine.",
+    "mechanism": "CNS depression additive effect.",
+    "recommendation": "Advise caution with alcohol. Less sedating than first-gen antihistamines.",
+    "source": "DrugBank",
+    "cached_at": "2026-06-09T18:01:42.336Z"
+  }
+},
+{
+  "model": "medos.druginteraction",
+  "pk": 124,
+  "fields": {
+    "drug_a": "Chlorpheniramine",
+    "drug_b": "Amitriptyline",
+    "severity": "moderate",
+    "description": "Additive anticholinergic effects — dry mouth, constipation, urinary retention, confusion.",
+    "mechanism": "Combined muscarinic receptor blockade.",
+    "recommendation": "Avoid in elderly. Monitor for anticholinergic toxicity.",
+    "source": "DDInter",
+    "cached_at": "2026-06-09T18:01:42.346Z"
+  }
+},
+{
+  "model": "medos.druginteraction",
+  "pk": 125,
+  "fields": {
+    "drug_a": "Dextromethorphan",
+    "drug_b": "Fluoxetine",
+    "severity": "moderate",
+    "description": "Serotonin syndrome risk. Dextromethorphan has serotonergic activity.",
+    "mechanism": "Additive serotonin reuptake inhibition.",
+    "recommendation": "Monitor for serotonin syndrome. Use alternative antitussive.",
+    "source": "OpenFDA",
+    "cached_at": "2026-06-09T18:01:42.356Z"
+  }
+},
+{
+  "model": "medos.druginteraction",
+  "pk": 126,
+  "fields": {
+    "drug_a": "Ambroxol",
+    "drug_b": "Codeine",
+    "severity": "minor",
+    "description": "Cough suppression counteracts mucolytic expectorant effect minimally.",
+    "mechanism": "Codeine suppresses cough reflex, reducing clearance of thinned secretions.",
+    "recommendation": "Generally safe. Ensure adequate hydration.",
+    "source": "DrugBank",
+    "cached_at": "2026-06-09T18:01:42.365Z"
+  }
+},
+{
+  "model": "medos.druginteraction",
+  "pk": 127,
+  "fields": {
+    "drug_a": "Potassium Supplements",
+    "drug_b": "Spironolactone",
+    "severity": "contraindicated",
+    "description": "Life-threatening hyperkalemia risk with potassium supplementation + K-sparing diuretic.",
+    "mechanism": "Combined K+ loading with reduced K+ excretion.",
+    "recommendation": "DO NOT SUPPLEMENT K+ with K-sparing diuretics. Monitor K+ regularly.",
+    "source": "DDInter",
+    "cached_at": "2026-06-09T18:01:42.375Z"
+  }
+},
+{
+  "model": "medos.druginteraction",
+  "pk": 128,
+  "fields": {
+    "drug_a": "Potassium Supplements",
+    "drug_b": "Ramipril",
+    "severity": "moderate",
+    "description": "ACE inhibitors reduce K+ excretion — risk of hyperkalemia with supplements.",
+    "mechanism": "ACE inhibition reduces aldosterone, decreasing K+ excretion.",
+    "recommendation": "Avoid K+ supplements with ACE inhibitors unless deficiency confirmed.",
+    "source": "DrugBank",
+    "cached_at": "2026-06-09T18:01:42.385Z"
+  }
+},
+{
+  "model": "medos.druginteraction",
+  "pk": 129,
+  "fields": {
+    "drug_a": "Folic Acid",
+    "drug_b": "Methotrexate",
+    "severity": "moderate",
+    "description": "Folic acid supplementation may reduce methotrexate efficacy in RA.",
+    "mechanism": "Dihydrofolate reductase inhibition bypassed by exogenous folate.",
+    "recommendation": "Timing: give folic acid on days without methotrexate. Continue for side effect reduction.",
+    "source": "DDInter",
+    "cached_at": "2026-06-09T18:01:42.395Z"
+  }
+},
+{
+  "model": "medos.druginteraction",
+  "pk": 130,
+  "fields": {
+    "drug_a": "Vitamin D",
+    "drug_b": "Digoxin",
+    "severity": "moderate",
+    "description": "Vitamin D-induced hypercalcemia potentiates digoxin toxicity (arrhythmias, heart block).",
+    "mechanism": "Hypercalcemia increases myocardial sensitivity to digoxin.",
+    "recommendation": "Monitor serum calcium. Avoid high-dose vitamin D in patients on digoxin.",
+    "source": "DrugBank",
+    "cached_at": "2026-06-09T18:01:42.410Z"
+  }
+},
+{
+  "model": "medos.druginteraction",
+  "pk": 131,
+  "fields": {
+    "drug_a": "Vitamin D",
+    "drug_b": "Hydrochlorothiazide",
+    "severity": "minor",
+    "description": "Thiazide diuretics reduce urinary calcium excretion — mild hypercalcemia risk with high-dose vitamin D.",
+    "mechanism": "HCTZ decreases Ca++ excretion, vitamin D increases absorption.",
+    "recommendation": "Monitor serum calcium with high-dose vitamin D + thiazide.",
+    "source": "DDInter",
+    "cached_at": "2026-06-09T18:01:42.420Z"
+  }
+},
+{
+  "model": "medos.druginteraction",
+  "pk": 132,
+  "fields": {
+    "drug_a": "Dexamethasone",
+    "drug_b": "Aspirin",
+    "severity": "moderate",
+    "description": "Increased GI bleeding risk. Corticosteroid + NSAID combination.",
+    "mechanism": "Corticosteroids impair mucosal defense; aspirin adds COX inhibition.",
+    "recommendation": "Add PPI. Use lowest steroid dose and shortest duration.",
+    "source": "OpenFDA",
+    "cached_at": "2026-06-09T18:01:42.431Z"
+  }
+},
+{
+  "model": "medos.druginteraction",
+  "pk": 133,
+  "fields": {
+    "drug_a": "Dexamethasone",
+    "drug_b": "Insulin Glargine",
+    "severity": "moderate",
+    "description": "Steroids cause hyperglycemia — significantly increased insulin requirement.",
+    "mechanism": "Corticosteroid-induced insulin resistance.",
+    "recommendation": "Monitor blood glucose 4-6 hourly. Titrate insulin aggressively.",
+    "source": "DDInter",
+    "cached_at": "2026-06-09T18:01:42.441Z"
+  }
+},
+{
+  "model": "medos.druginteraction",
+  "pk": 134,
+  "fields": {
+    "drug_a": "Dexamethasone",
+    "drug_b": "Glimepiride",
+    "severity": "moderate",
+    "description": "Steroid-induced hyperglycemia may require increased OAD dose.",
+    "mechanism": "Corticosteroid-induced insulin resistance.",
+    "recommendation": "Monitor glucose. May need temporary insulin.",
+    "source": "DrugBank",
+    "cached_at": "2026-06-09T18:01:42.450Z"
+  }
+},
+{
+  "model": "medos.druginteraction",
+  "pk": 135,
+  "fields": {
+    "drug_a": "Enoxaparin",
+    "drug_b": "Clopidogrel",
+    "severity": "major",
+    "description": "Increased bleeding risk. Common in COVID-19 thromboprophylaxis.",
+    "mechanism": "Dual anticoagulant + antiplatelet effect.",
+    "recommendation": "Monitor for bleeding. Use PPI. Common in high-risk COVID-19 protocols.",
+    "source": "DDInter",
+    "cached_at": "2026-06-09T18:01:42.460Z"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can add log entry",
+    "content_type": [
+      "admin",
+      "logentry"
+    ],
+    "codename": "add_logentry"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can change log entry",
+    "content_type": [
+      "admin",
+      "logentry"
+    ],
+    "codename": "change_logentry"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can delete log entry",
+    "content_type": [
+      "admin",
+      "logentry"
+    ],
+    "codename": "delete_logentry"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can view log entry",
+    "content_type": [
+      "admin",
+      "logentry"
+    ],
+    "codename": "view_logentry"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can add permission",
+    "content_type": [
+      "auth",
+      "permission"
+    ],
+    "codename": "add_permission"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can change permission",
+    "content_type": [
+      "auth",
+      "permission"
+    ],
+    "codename": "change_permission"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can delete permission",
+    "content_type": [
+      "auth",
+      "permission"
+    ],
+    "codename": "delete_permission"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can view permission",
+    "content_type": [
+      "auth",
+      "permission"
+    ],
+    "codename": "view_permission"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can add group",
+    "content_type": [
+      "auth",
+      "group"
+    ],
+    "codename": "add_group"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can change group",
+    "content_type": [
+      "auth",
+      "group"
+    ],
+    "codename": "change_group"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can delete group",
+    "content_type": [
+      "auth",
+      "group"
+    ],
+    "codename": "delete_group"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can view group",
+    "content_type": [
+      "auth",
+      "group"
+    ],
+    "codename": "view_group"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can add user",
+    "content_type": [
+      "auth",
+      "user"
+    ],
+    "codename": "add_user"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can change user",
+    "content_type": [
+      "auth",
+      "user"
+    ],
+    "codename": "change_user"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can delete user",
+    "content_type": [
+      "auth",
+      "user"
+    ],
+    "codename": "delete_user"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can view user",
+    "content_type": [
+      "auth",
+      "user"
+    ],
+    "codename": "view_user"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can add content type",
+    "content_type": [
+      "contenttypes",
+      "contenttype"
+    ],
+    "codename": "add_contenttype"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can change content type",
+    "content_type": [
+      "contenttypes",
+      "contenttype"
+    ],
+    "codename": "change_contenttype"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can delete content type",
+    "content_type": [
+      "contenttypes",
+      "contenttype"
+    ],
+    "codename": "delete_contenttype"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can view content type",
+    "content_type": [
+      "contenttypes",
+      "contenttype"
+    ],
+    "codename": "view_contenttype"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can add session",
+    "content_type": [
+      "sessions",
+      "session"
+    ],
+    "codename": "add_session"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can change session",
+    "content_type": [
+      "sessions",
+      "session"
+    ],
+    "codename": "change_session"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can delete session",
+    "content_type": [
+      "sessions",
+      "session"
+    ],
+    "codename": "delete_session"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can view session",
+    "content_type": [
+      "sessions",
+      "session"
+    ],
+    "codename": "view_session"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can add drug interaction",
+    "content_type": [
+      "medos",
+      "druginteraction"
+    ],
+    "codename": "add_druginteraction"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can change drug interaction",
+    "content_type": [
+      "medos",
+      "druginteraction"
+    ],
+    "codename": "change_druginteraction"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can delete drug interaction",
+    "content_type": [
+      "medos",
+      "druginteraction"
+    ],
+    "codename": "delete_druginteraction"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can view drug interaction",
+    "content_type": [
+      "medos",
+      "druginteraction"
+    ],
+    "codename": "view_druginteraction"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can add encounter",
+    "content_type": [
+      "medos",
+      "encounter"
+    ],
+    "codename": "add_encounter"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can change encounter",
+    "content_type": [
+      "medos",
+      "encounter"
+    ],
+    "codename": "change_encounter"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can delete encounter",
+    "content_type": [
+      "medos",
+      "encounter"
+    ],
+    "codename": "delete_encounter"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can view encounter",
+    "content_type": [
+      "medos",
+      "encounter"
+    ],
+    "codename": "view_encounter"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can add invoice",
+    "content_type": [
+      "medos",
+      "invoice"
+    ],
+    "codename": "add_invoice"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can change invoice",
+    "content_type": [
+      "medos",
+      "invoice"
+    ],
+    "codename": "change_invoice"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can delete invoice",
+    "content_type": [
+      "medos",
+      "invoice"
+    ],
+    "codename": "delete_invoice"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can view invoice",
+    "content_type": [
+      "medos",
+      "invoice"
+    ],
+    "codename": "view_invoice"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can add invoice line item",
+    "content_type": [
+      "medos",
+      "invoicelineitem"
+    ],
+    "codename": "add_invoicelineitem"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can change invoice line item",
+    "content_type": [
+      "medos",
+      "invoicelineitem"
+    ],
+    "codename": "change_invoicelineitem"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can delete invoice line item",
+    "content_type": [
+      "medos",
+      "invoicelineitem"
+    ],
+    "codename": "delete_invoicelineitem"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can view invoice line item",
+    "content_type": [
+      "medos",
+      "invoicelineitem"
+    ],
+    "codename": "view_invoicelineitem"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can add medication",
+    "content_type": [
+      "medos",
+      "medication"
+    ],
+    "codename": "add_medication"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can change medication",
+    "content_type": [
+      "medos",
+      "medication"
+    ],
+    "codename": "change_medication"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can delete medication",
+    "content_type": [
+      "medos",
+      "medication"
+    ],
+    "codename": "delete_medication"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can view medication",
+    "content_type": [
+      "medos",
+      "medication"
+    ],
+    "codename": "view_medication"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can add patient",
+    "content_type": [
+      "medos",
+      "patient"
+    ],
+    "codename": "add_patient"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can change patient",
+    "content_type": [
+      "medos",
+      "patient"
+    ],
+    "codename": "change_patient"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can delete patient",
+    "content_type": [
+      "medos",
+      "patient"
+    ],
+    "codename": "delete_patient"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can view patient",
+    "content_type": [
+      "medos",
+      "patient"
+    ],
+    "codename": "view_patient"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can add medical alert",
+    "content_type": [
+      "medos",
+      "medicalalert"
+    ],
+    "codename": "add_medicalalert"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can change medical alert",
+    "content_type": [
+      "medos",
+      "medicalalert"
+    ],
+    "codename": "change_medicalalert"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can delete medical alert",
+    "content_type": [
+      "medos",
+      "medicalalert"
+    ],
+    "codename": "delete_medicalalert"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can view medical alert",
+    "content_type": [
+      "medos",
+      "medicalalert"
+    ],
+    "codename": "view_medicalalert"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can add sync entry",
+    "content_type": [
+      "medos",
+      "syncentry"
+    ],
+    "codename": "add_syncentry"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can change sync entry",
+    "content_type": [
+      "medos",
+      "syncentry"
+    ],
+    "codename": "change_syncentry"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can delete sync entry",
+    "content_type": [
+      "medos",
+      "syncentry"
+    ],
+    "codename": "delete_syncentry"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can view sync entry",
+    "content_type": [
+      "medos",
+      "syncentry"
+    ],
+    "codename": "view_syncentry"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can add reconciliation log",
+    "content_type": [
+      "medos",
+      "reconciliationlog"
+    ],
+    "codename": "add_reconciliationlog"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can change reconciliation log",
+    "content_type": [
+      "medos",
+      "reconciliationlog"
+    ],
+    "codename": "change_reconciliationlog"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can delete reconciliation log",
+    "content_type": [
+      "medos",
+      "reconciliationlog"
+    ],
+    "codename": "delete_reconciliationlog"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can view reconciliation log",
+    "content_type": [
+      "medos",
+      "reconciliationlog"
+    ],
+    "codename": "view_reconciliationlog"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can add vitals",
+    "content_type": [
+      "medos",
+      "vitals"
+    ],
+    "codename": "add_vitals"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can change vitals",
+    "content_type": [
+      "medos",
+      "vitals"
+    ],
+    "codename": "change_vitals"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can delete vitals",
+    "content_type": [
+      "medos",
+      "vitals"
+    ],
+    "codename": "delete_vitals"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can view vitals",
+    "content_type": [
+      "medos",
+      "vitals"
+    ],
+    "codename": "view_vitals"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can add Token",
+    "content_type": [
+      "authtoken",
+      "token"
+    ],
+    "codename": "add_token"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can change Token",
+    "content_type": [
+      "authtoken",
+      "token"
+    ],
+    "codename": "change_token"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can delete Token",
+    "content_type": [
+      "authtoken",
+      "token"
+    ],
+    "codename": "delete_token"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can view Token",
+    "content_type": [
+      "authtoken",
+      "token"
+    ],
+    "codename": "view_token"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can add Token",
+    "content_type": [
+      "authtoken",
+      "tokenproxy"
+    ],
+    "codename": "add_tokenproxy"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can change Token",
+    "content_type": [
+      "authtoken",
+      "tokenproxy"
+    ],
+    "codename": "change_tokenproxy"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can delete Token",
+    "content_type": [
+      "authtoken",
+      "tokenproxy"
+    ],
+    "codename": "delete_tokenproxy"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can view Token",
+    "content_type": [
+      "authtoken",
+      "tokenproxy"
+    ],
+    "codename": "view_tokenproxy"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can add hospital user profile",
+    "content_type": [
+      "medos",
+      "hospitaluserprofile"
+    ],
+    "codename": "add_hospitaluserprofile"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can change hospital user profile",
+    "content_type": [
+      "medos",
+      "hospitaluserprofile"
+    ],
+    "codename": "change_hospitaluserprofile"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can delete hospital user profile",
+    "content_type": [
+      "medos",
+      "hospitaluserprofile"
+    ],
+    "codename": "delete_hospitaluserprofile"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can view hospital user profile",
+    "content_type": [
+      "medos",
+      "hospitaluserprofile"
+    ],
+    "codename": "view_hospitaluserprofile"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can add role",
+    "content_type": [
+      "medos",
+      "role"
+    ],
+    "codename": "add_role"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can change role",
+    "content_type": [
+      "medos",
+      "role"
+    ],
+    "codename": "change_role"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can delete role",
+    "content_type": [
+      "medos",
+      "role"
+    ],
+    "codename": "delete_role"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can view role",
+    "content_type": [
+      "medos",
+      "role"
+    ],
+    "codename": "view_role"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can add clinical note",
+    "content_type": [
+      "medos",
+      "clinicalnote"
+    ],
+    "codename": "add_clinicalnote"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can change clinical note",
+    "content_type": [
+      "medos",
+      "clinicalnote"
+    ],
+    "codename": "change_clinicalnote"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can delete clinical note",
+    "content_type": [
+      "medos",
+      "clinicalnote"
+    ],
+    "codename": "delete_clinicalnote"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can view clinical note",
+    "content_type": [
+      "medos",
+      "clinicalnote"
+    ],
+    "codename": "view_clinicalnote"
+  }
+},
+{
+  "model": "auth.user",
+  "fields": {
+    "password": "pbkdf2_sha256$1200000$PyHXMLfgIEx6Xv7GKZm7xo$k5O5iIrqgy22irWYIJPMZubqiky0ztY5jyjjwd91FS0=",
+    "last_login": "2026-06-10T05:35:01.946Z",
+    "is_superuser": true,
+    "username": "admin",
+    "first_name": "",
+    "last_name": "",
+    "email": "admin@hospital.com",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2026-06-09T17:13:50.311Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "fields": {
+    "password": "!Fz0wv3QgnAT3Z6OP7vDfSjfYRe68J57JNLdvmw7V",
+    "last_login": "2026-06-10T07:02:52.001Z",
+    "is_superuser": false,
+    "username": "ca551f7c-9955-4af7-8148-9d8534dcee70",
+    "first_name": "",
+    "last_name": "",
+    "email": "testdev@hospital.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2026-06-10T05:05:30Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "authtoken.token",
+  "pk": "d8394d4c7af818a2e4052742d13c770be1eefa83",
+  "fields": {
+    "user": [
+      "admin"
+    ],
+    "created": "2026-06-09T17:15:46.221Z"
+  }
+},
+{
+  "model": "authtoken.token",
+  "pk": "dfe26b58606e8080bcddbb49063b179a28316bb2",
+  "fields": {
+    "user": [
+      "ca551f7c-9955-4af7-8148-9d8534dcee70"
+    ],
+    "created": "2026-06-10T05:05:42.470Z"
+  }
+},
+{
+  "model": "medos.hospitaluserprofile",
+  "pk": 1,
+  "fields": {
+    "user": [
+      "ca551f7c-9955-4af7-8148-9d8534dcee70"
+    ],
+    "employee_id": null,
+    "role": 2,
+    "department": "",
+    "phone": "",
+    "designation": "",
+    "is_active": true,
+    "created_at": "2026-06-10T06:37:50.912Z",
+    "updated_at": "2026-06-10T06:37:50.912Z"
+  }
+},
+{
+  "model": "medos.patient",
+  "pk": "06fb9b2d-347b-49d8-8503-df42c23e50bf",
+  "fields": {
+    "hospital_patient_id": "",
+    "first_name": "Ravi",
+    "last_name": "Kumar",
+    "date_of_birth": "1985-06-15",
+    "gender": "M",
+    "phone": "9876543210",
+    "email": "",
+    "address": "",
+    "city": "Mumbai",
+    "state": "Maharashtra",
+    "pincode": "",
+    "abha_id": null,
+    "is_active": true,
+    "created_at": "2026-06-09T17:14:10.766Z",
+    "updated_at": "2026-06-09T17:14:10.766Z",
+    "created_by": [
+      "admin"
+    ]
+  }
+},
+{
+  "model": "medos.patient",
+  "pk": "5cb95c44-78ff-4b01-b38a-ac4bfeabdfe9",
+  "fields": {
+    "hospital_patient_id": "",
+    "first_name": "Priya",
+    "last_name": "Sharma",
+    "date_of_birth": "1990-03-22",
+    "gender": "F",
+    "phone": "9988776655",
+    "email": "",
+    "address": "",
+    "city": "Delhi",
+    "state": "Delhi",
+    "pincode": "",
+    "abha_id": null,
+    "is_active": true,
+    "created_at": "2026-06-09T17:25:27.106Z",
+    "updated_at": "2026-06-09T17:25:27.106Z",
+    "created_by": [
+      "admin"
+    ]
+  }
+},
+{
+  "model": "medos.patient",
+  "pk": "b35ef61e-4a4c-45e4-912f-e19a031f3ba5",
+  "fields": {
+    "hospital_patient_id": "",
+    "first_name": "Priya",
+    "last_name": "Sharma",
+    "date_of_birth": "1990-03-22",
+    "gender": "F",
+    "phone": "9988776655",
+    "email": "",
+    "address": "",
+    "city": "Delhi",
+    "state": "Delhi",
+    "pincode": "",
+    "abha_id": null,
+    "is_active": true,
+    "created_at": "2026-06-09T17:16:35.868Z",
+    "updated_at": "2026-06-09T17:16:35.868Z",
+    "created_by": [
+      "admin"
+    ]
+  }
+},
+{
+  "model": "medos.encounter",
+  "pk": "1f1433e8-2f78-4db5-8bcf-f951b5ffd884",
+  "fields": {
+    "patient": "5cb95c44-78ff-4b01-b38a-ac4bfeabdfe9",
+    "encounter_type": "OPD",
+    "status": "COMPLETED",
+    "doctor": [
+      "admin"
+    ],
+    "department": "General Medicine",
+    "chief_complaint": "Fever and cough",
+    "clinical_notes": "",
+    "diagnosis": "Amlodipine",
+    "created_at": "2026-06-09T17:25:44.813Z",
+    "updated_at": "2026-06-10T02:37:35.214Z",
+    "scheduled_date": null,
+    "completed_at": "2026-06-10T02:37:35.213Z"
+  }
+},
+{
+  "model": "medos.vitals",
+  "pk": 1,
+  "fields": {
+    "encounter": "1f1433e8-2f78-4db5-8bcf-f951b5ffd884",
+    "recorded_at": "2026-06-09T17:45:43.578Z",
+    "recorded_by": null,
+    "systolic_bp": 126,
+    "diastolic_bp": 77,
+    "heart_rate": 79,
+    "respiratory_rate": 16,
+    "temperature": 36.5,
+    "oxygen_saturation": 100,
+    "weight": null,
+    "height": null,
+    "blood_glucose": null
+  }
+},
+{
+  "model": "medos.clinicalnote",
+  "pk": 1,
+  "fields": {
+    "encounter": "1f1433e8-2f78-4db5-8bcf-f951b5ffd884",
+    "created_by": [
+      "ca551f7c-9955-4af7-8148-9d8534dcee70"
+    ],
+    "specialty": "cardiology",
+    "transcript": "Hello doctor, I have a slight chest pain and headache and my nostrils are closed.",
+    "structured_note": {},
+    "note_text": "## Chief Complaints\nChest pain, headache, nasal congestion.\n\n## History of Present Illness\nPatient reports onset and duration of symptoms are not specified. Chest pain described as mild. Aggravating/relieving factors not mentioned.\n\n## Cardiovascular Risk Factors\nNot specified / Not documented.\n\n## Vitals\nNot specified / Not documented.\n\n## Physical Exam\nNot specified / Not documented.\n\n## Investigations\nNot specified / Not documented.\n\n## Diagnosis\nDifferential: Acute Coronary Syndrome (ACS), Non-Cardiac Chest Pain, Sinusitis. Diagnosis pending further workup.\n\n## Treatment Plan\nNo treatment initiated. Further evaluation and investigations required before management.",
+    "status": "DRAFT",
+    "audio_duration_secs": null,
+    "created_at": "2026-06-10T07:13:43.268Z",
+    "updated_at": "2026-06-10T07:13:43.268Z"
+  }
+},
+{
+  "model": "medos.clinicalnote",
+  "pk": 2,
+  "fields": {
+    "encounter": "1f1433e8-2f78-4db5-8bcf-f951b5ffd884",
+    "created_by": [
+      "ca551f7c-9955-4af7-8148-9d8534dcee70"
+    ],
+    "specialty": "cardiology",
+    "transcript": "ഡോക്ടറെ എനിക്കാണെങ്കിൽ ഭയങ്കര തലവേദന, പനി, ചുമ, ദേഹവേദന, ഭയങ്കര മൂക്കൊലിപ്പ് ഇതൊക്കെയുണ്ട്. രാത്രി ഉറങ്ങാനൊന്നും പറ്റുന്നില്ല.",
+    "structured_note": {},
+    "note_text": "**Chief Complaints**\n- Severe headache\n- Fever\n- Cough\n- Myalgia (body ache)\n- Rhinorrhea (runny nose)\n\n**History of Present Illness**\n- Patient presents with acute onset of multiple systemic symptoms.\n- Reports significant insomnia, preventing sleep at night.\n- Aggravating/relieving factors and precise duration of symptoms are not specified.\n\n**Cardiovascular Risk Factors**\n- None mentioned in the provided dictation.\n\n**Vitals**\n- Not mentioned in the provided dictation.\n\n**Physical Exam**\n- No physical examination findings provided in the dictation.\n\n**Investigations**\n- No investigations mentioned in the provided dictation.\n\n**Diagnosis**\n- Differential Diagnosis:\n    1. Viral Syndrome (e.g., Influenza)\n    2. Acute Respiratory Infection\n- No primary cardiac pathology suggested by the provided history.\n\n**Treatment Plan**\n- No specific treatment plan mentioned in the provided dictation. Further evaluation would be required to formulate a treatment plan.",
+    "status": "CONFIRMED",
+    "audio_duration_secs": null,
+    "created_at": "2026-06-10T07:14:39.483Z",
+    "updated_at": "2026-06-10T07:15:10.209Z"
+  }
+},
+{
+  "model": "medos.clinicalnote",
+  "pk": 3,
+  "fields": {
+    "encounter": "1f1433e8-2f78-4db5-8bcf-f951b5ffd884",
+    "created_by": [
+      "ca551f7c-9955-4af7-8148-9d8534dcee70"
+    ],
+    "specialty": "cardiology",
+    "transcript": "ഡോക്ടറെ എനിക്കാണെങ്കിൽ ഭയങ്കര തലവേദന, ശരീരവേദന, മൂക്കൊലിപ്പ്, പിന്നെ രാത്രി ഉറങ്ങാൻ പറ്റുന്നില്ല.",
+    "structured_note": {},
+    "note_text": "# **Cardiology OPD Consultation Note**\n\n## **1. Chief Complaints**\n*   Severe headache\n*   Body ache\n*   Rhinorrhea\n*   Insomnia / Sleep disturbance\n\n## **2. History of Present Illness**\n*   History not detailed in dictation.\n\n## **3. Cardiovascular Risk Factors**\n*   None identified.\n\n## **4. Vitals**\n*   Not specified.\n\n## **5. Physical Exam**\n*   Not specified.\n\n## **6. Investigations**\n*   Not mentioned.\n\n## **7. Diagnosis**\n*   Non-cardiac symptoms; no acute cardiac diagnosis made.\n\n## **8. Treatment Plan**\n*   Not specified.",
+    "status": "CONFIRMED",
+    "audio_duration_secs": null,
+    "created_at": "2026-06-10T07:16:15.522Z",
+    "updated_at": "2026-06-10T07:24:45.869Z"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 1,
+  "fields": {
+    "action_time": "2026-06-10T06:37:50.916Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "auth",
+      "user"
+    ],
+    "object_id": "2",
+    "object_repr": "ca551f7c-9955-4af7-8148-9d8534dcee70",
+    "action_flag": 2,
+    "change_message": "[{\"added\": {\"name\": \"hospital user profile\", \"object\": \"ca551f7c-9955-4af7-8148-9d8534dcee70 (no ID)\"}}]"
+  }
+}
+]

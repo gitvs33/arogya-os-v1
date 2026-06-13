@@ -2,6 +2,17 @@
 """Django's command-line utility for administrative tasks."""
 import os
 import sys
+from pathlib import Path
+
+# Load .env file before Django starts
+try:
+    from dotenv import load_dotenv
+    env_path = Path(__file__).resolve().parent / '.env'
+    if env_path.exists():
+        load_dotenv(env_path)
+        print(f'Loaded env: {env_path}', file=__import__('sys').stderr)
+except ImportError:
+    pass
 
 
 def main():

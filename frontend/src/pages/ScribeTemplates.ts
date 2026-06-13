@@ -1,0 +1,76 @@
+export const TEMPLATES = [
+  { id: 'general', name: 'General Medicine' },
+  { id: 'cardiology', name: 'Cardiology' },
+  { id: 'pediatrics', name: 'Pediatrics' },
+  { id: 'neurology', name: 'Neurology' },
+  { id: 'orthopedics', name: 'Orthopedics' },
+  { id: 'obgyn', name: 'Obstetrics & Gynecology' },
+  { id: 'dermatology', name: 'Dermatology' },
+  { id: 'psychiatry', name: 'Psychiatry' },
+  { id: 'pulmonology', name: 'Pulmonology' },
+  { id: 'gastroenterology', name: 'Gastroenterology' },
+  { id: 'ent', name: 'ENT' },
+  { id: 'ophthalmology', name: 'Ophthalmology' },
+  { id: 'nephrology', name: 'Nephrology' },
+  { id: 'endocrinology', name: 'Endocrinology' },
+  { id: 'urology', name: 'Urology' },
+  { id: 'emergency', name: 'Emergency' },
+  { id: 'surgery', name: 'General Surgery' },
+  { id: 'oncology', name: 'Oncology' },
+  { id: 'rheumatology', name: 'Rheumatology' },
+  { id: 'neonatology', name: 'Neonatology' },
+  { id: 'infectious_disease', name: 'Infectious Disease' },
+  { id: 'geriatrics', name: 'Geriatrics' },
+];
+
+export const TEMPLATE_FIELDS: Record<string, {key: string, label: string, match: string}[]> = {
+  cardiology: [
+    { key: 'chief_complaint', label: 'Chief Complaints', match: 'Chief Complaint' },
+    { key: 'hpi', label: 'History of Present Illness', match: 'History' },
+    { key: 'past_history', label: 'Past History', match: 'Past History' },
+    { key: 'risk_factors', label: 'Cardiovascular Risk Factors', match: 'Risk Factor' },
+    { key: 'vitals', label: 'Vitals', match: 'Vital' },
+    { key: 'exam', label: 'Physical Exam', match: 'Exam' },
+    { key: 'investigations', label: 'Investigations', match: 'Investigation' },
+    { key: 'diagnosis', label: 'Diagnosis', match: 'Diagnosis' },
+    { key: 'plan', label: 'Treatment Plan', match: 'Treatment' },
+    { key: 'lab_tests', label: 'Lab Tests', match: 'Lab' },
+  ],
+  pediatrics: [
+    { key: 'chief_complaint', label: 'Chief Complaints', match: 'Chief Complaint' },
+    { key: 'hpi', label: 'History of Present Illness', match: 'History' },
+    { key: 'past_history', label: 'Past History', match: 'Past History' },
+    { key: 'immunization', label: 'Immunization Status', match: 'Immunization' },
+    { key: 'vitals', label: 'Vitals & Anthropometry', match: 'Vital' },
+    { key: 'exam', label: 'Physical Examination', match: 'Exam' },
+    { key: 'diagnosis', label: 'Diagnosis', match: 'Diagnosis' },
+    { key: 'plan', label: 'Treatment Plan', match: 'Treatment' },
+  ],
+  obgyn: [
+    { key: 'chief_complaint', label: 'Chief Complaints', match: 'Chief Complaint' },
+    { key: 'hpi', label: 'History of Present Illness', match: 'History' },
+    { key: 'obstetric', label: 'Obstetric History', match: 'Obstetric' },
+    { key: 'gynecologic', label: 'Gynecologic History', match: 'Gynecologic' },
+    { key: 'past_history', label: 'Past History', match: 'Past History' },
+    { key: 'exam', label: 'Examination', match: 'Exam' },
+    { key: 'investigations', label: 'Investigations', match: 'Investigation' },
+    { key: 'diagnosis', label: 'Diagnosis', match: 'Diagnosis' },
+    { key: 'plan', label: 'Treatment Plan', match: 'Treatment' },
+  ],
+  general: [
+    { key: 'chief_complaint', label: 'Chief Complaints', match: 'Chief Complaint' },
+    { key: 'hpi', label: 'History of Present Illness', match: 'History' },
+    { key: 'past_history', label: 'Past History', match: 'Past History' },
+    { key: 'vitals', label: 'Vitals', match: 'Vital' },
+    { key: 'exam', label: 'Examination Findings', match: 'Exam' },
+    { key: 'diagnosis', label: 'Diagnosis', match: 'Diagnosis' },
+    { key: 'plan', label: 'Treatment Plan', match: 'Treatment' },
+    { key: 'lab_tests', label: 'Lab Tests', match: 'Lab' },
+    { key: 'followup', label: 'Follow-up', match: 'Follow' },
+  ],
+};
+
+// Fallback to general for anything not explicitly defined
+export const getTemplateFields = (templateId: string) => {
+  return TEMPLATE_FIELDS[templateId] || TEMPLATE_FIELDS['general'];
+};

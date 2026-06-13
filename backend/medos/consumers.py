@@ -1,26 +1,62 @@
 """
 WebSocket consumers for TeleICU real-time streaming.
 
-VitalsConsumer — pushes live vitals for a single patient to subscribed dashboards.
+VitalsConsumer — pushes live vitals for a single patient or the aggregated TeleICU stream.
 AlertsConsumer — pushes threshold breach alerts to all subscribed dashboards.
+SignalConsumer — WebRTC signaling relay with multi-room support.
 """
 import json
 import logging
 from channels.generic.websocket import AsyncWebsocketConsumer
+from channels.layers import get_channel_layer
+from asgiref.sync import async_to_sync
 
 logger = logging.getLogger(__name__)
 
 
-class VitalsConsumer(AsyncWebsocketConsumer):
-    """Stream vitals for a single patient.
+# ── Notification helpers (called from sync views) ───────────────────────
 
-    Clients connect to /ws/vitals/<patient_id>/ and receive JSON messages
-    containing the latest vitals snapshot whenever the Celery task generates one.
+def notify_pharmacy_queue(hospital_id, payload):
+    """Push a prescription update to all pharmacy queue clients."""
+    channel_layer = get_channel_layer()
+    if channel_layer:
+        async_to_sync(channel_layer.group_send)(
+            f'pharmacy_queue_{hospital_id}',
+            {
+                'type': 'pharmacy_queue_update',
+                'data': payload,
+            },
+        )
+
+
+def notify_lab_queue(hospital_id, payload):
+    """Push a lab order update to all lab queue clients."""
+    channel_layer = get_channel_layer()
+    if channel_layer:
+        async_to_sync(channel_layer.group_send)(
+            f'lab_queue_{hospital_id}',
+            {
+                'type': 'lab_queue_update',
+                'data': payload,
+            },
+        )
+
+
+class VitalsConsumer(AsyncWebsocketConsumer):
+    """Stream vitals — single patient or aggregated TeleICU feed.
+
+    Clients connecting to /ws/vitals/<patient_id>/ receive vitals for that
+    one patient.  Clients connecting to /ws/teleicu/vitals/ receive the
+    aggregated vitals stream for all monitored patients.
     """
 
     async def connect(self):
-        self.patient_id = self.scope['url_route']['kwargs']['patient_id']
-        self.room_group_name = f'vitals_{self.patient_id}'
+        patient_id = self.scope['url_route']['kwargs'].get('patient_id')
+        if patient_id:
+            self.patient_id = patient_id
+            self.room_group_name = f'vitals_{self.patient_id}'
+        else:
+            self.room_group_name = 'teleicu_vitals'
 
         await self.channel_layer.group_add(
             self.room_group_name,
@@ -39,25 +75,22 @@ class VitalsConsumer(AsyncWebsocketConsumer):
         pass
 
     async def vitals_update(self, event):
-        """Handler for 'vitals_update' messages broadcast from Celery tasks.
-
-        The 'event' dict carries:
-            type (str)  → 'vitals_update'
-            data (dict) → the vitals payload
-        """
+        """Handler for 'vitals_update' messages broadcast from Celery tasks."""
         await self.send(text_data=json.dumps(event['data']))
 
 
 class SignalConsumer(AsyncWebsocketConsumer):
-    """WebRTC signaling relay.
+    """WebRTC signaling relay with multi-room support.
 
-    Relays SDP offers/answers and ICE candidates between two peers
-    (doctor dashboard ↔ patient endpoint). Uses a room-based grouping
-    so both peers can exchange messages.
+    Clients connect to /ws/signal/<room_name>/ and exchange SDP
+    offers/answers and ICE candidates within that room.
+    Falls back to a default 'signal_room' if no room is specified.
     """
 
     async def connect(self):
-        self.room_name = 'signal_room'
+        self.room_name = self.scope['url_route']['kwargs'].get(
+            'room_name', 'signal_room'
+        )
         self.room_group_name = f'signal_{self.room_name}'
 
         await self.channel_layer.group_add(
@@ -65,21 +98,19 @@ class SignalConsumer(AsyncWebsocketConsumer):
             self.channel_name,
         )
         await self.accept()
-        logger.info("Signal client connected")
+        logger.info("Signal client connected to room '%s'", self.room_name)
 
     async def disconnect(self, close_code):
         await self.channel_layer.group_discard(
             self.room_group_name,
             self.channel_name,
         )
-        logger.info("Signal client disconnected")
+        logger.info("Signal client disconnected from room '%s'", self.room_name)
 
     async def receive(self, text_data):
-        """Relay any signaling message (offer, answer, ICE candidate)
-        to the other peer in the room."""
+        """Relay signaling messages to other peers in the room."""
         try:
             data = json.loads(text_data)
-            # Broadcast to group except sender
             await self.channel_layer.group_send(
                 self.room_group_name,
                 {
@@ -93,7 +124,6 @@ class SignalConsumer(AsyncWebsocketConsumer):
 
     async def signal_message(self, event):
         """Forward signaling message to all other clients in the room."""
-        # Don't echo back to sender
         if event.get('sender_channel') != self.channel_name:
             await self.send(text_data=json.dumps(event['data']))
 
@@ -123,4 +153,70 @@ class AlertsConsumer(AsyncWebsocketConsumer):
 
     async def alert_push(self, event):
         """Handler for alert messages from the threshold engine."""
+        await self.send(text_data=json.dumps(event['data']))
+
+
+# ── Pharmacy Queue Consumer ─────────────────────────────────────────────
+
+class PharmacyQueueConsumer(AsyncWebsocketConsumer):
+    """Real-time pharmacy queue updates.
+
+    Clients connect to /ws/pharmacy-queue/<hospital_id>/ and receive
+    prescription updates (new, amended, cancelled) as they happen.
+    """
+
+    async def connect(self):
+        self.hospital_id = self.scope['url_route']['kwargs'].get('hospital_id')
+        if not self.hospital_id:
+            await self.close()
+            return
+        self.room_group_name = f'pharmacy_queue_{self.hospital_id}'
+
+        await self.channel_layer.group_add(
+            self.room_group_name,
+            self.channel_name,
+        )
+        await self.accept()
+
+    async def disconnect(self, close_code):
+        await self.channel_layer.group_discard(
+            self.room_group_name,
+            self.channel_name,
+        )
+
+    async def pharmacy_queue_update(self, event):
+        """Handle pharmacy queue update messages."""
+        await self.send(text_data=json.dumps(event['data']))
+
+
+# ── Lab Queue Consumer ──────────────────────────────────────────────────
+
+class LabQueueConsumer(AsyncWebsocketConsumer):
+    """Real-time lab queue updates.
+
+    Clients connect to /ws/lab-queue/<hospital_id>/ and receive
+    lab order updates (new orders, status changes) as they happen.
+    """
+
+    async def connect(self):
+        self.hospital_id = self.scope['url_route']['kwargs'].get('hospital_id')
+        if not self.hospital_id:
+            await self.close()
+            return
+        self.room_group_name = f'lab_queue_{self.hospital_id}'
+
+        await self.channel_layer.group_add(
+            self.room_group_name,
+            self.channel_name,
+        )
+        await self.accept()
+
+    async def disconnect(self, close_code):
+        await self.channel_layer.group_discard(
+            self.room_group_name,
+            self.channel_name,
+        )
+
+    async def lab_queue_update(self, event):
+        """Handle lab queue update messages."""
         await self.send(text_data=json.dumps(event['data']))

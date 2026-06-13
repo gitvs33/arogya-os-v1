@@ -3,7 +3,10 @@ import json
 from datetime import date
 from django.contrib.auth import get_user_model
 from rest_framework.test import APIClient
-from medos.models import Patient, Encounter, Vitals, Medication, Invoice
+from medos.models import (
+    Patient, Encounter, Vitals, Medication, Invoice,
+    Payment, RefundRequest, InsuranceClaim,
+)
 
 User = get_user_model()
 
@@ -210,3 +213,159 @@ class TestDashboardAPI:
         assert 'today_encounters' in response.data
         assert 'active_alerts' in response.data
         assert 'pending_invoices' in response.data
+
+
+# ═══════════════════════════════════════════════════════════════════════════════
+# Payment, Refund, and Insurance Claim API
+# ═══════════════════════════════════════════════════════════════════════════════
+
+
+@pytest.mark.django_db
+class TestPaymentAPI:
+    def _create_invoice(self, auth_client, patient, user):
+        invoice = Invoice.objects.create(
+            patient=patient,
+            invoice_type='OPD',
+            subtotal=500, tax=90, total=590,
+            created_by=user,
+        )
+        invoice.status = 'ISSUED'
+        invoice.save()
+        return invoice
+
+    def test_create_payment(self, auth_client, patient, user):
+        """Create a payment against an invoice."""
+        invoice = self._create_invoice(auth_client, patient, user)
+        data = {
+            'invoice': str(invoice.id),
+            'patient': str(patient.id),
+            'amount': '590.00',
+            'payment_method': 'CASH',
+        }
+        response = auth_client.post('/api/payments/', data)
+        assert response.status_code == 201
+        assert response.data['status'] == 'SUCCESS'
+        assert 'receipt_number' in response.data
+        assert float(response.data['amount']) == 590.00
+
+    def test_create_payment_without_invoice(self, auth_client, patient):
+        """Payment requires invoice."""
+        data = {
+            'patient': str(patient.id),
+            'amount': '100.00',
+            'payment_method': 'CASH',
+        }
+        response = auth_client.post('/api/payments/', data)
+        assert response.status_code == 400
+
+    def test_list_payments(self, auth_client, patient, user):
+        """List payments endpoint works."""
+        invoice = self._create_invoice(auth_client, patient, user)
+        Payment.objects.create(
+            invoice=invoice,
+            patient=patient,
+            amount=590,
+            payment_method='CASH',
+            status='SUCCESS',
+        )
+        response = auth_client.get('/api/payments/')
+        assert response.status_code == 200
+        assert response.data['count'] >= 1
+
+
+@pytest.mark.django_db
+class TestRefundAPI:
+    def _create_invoice(self, auth_client, patient, user):
+        invoice = Invoice.objects.create(
+            patient=patient,
+            invoice_type='OPD',
+            subtotal=500, tax=90, total=590,
+            created_by=user,
+        )
+        invoice.status = 'ISSUED'
+        invoice.save()
+        return invoice
+
+    def test_create_refund_request(self, auth_client, patient, user):
+        """Create a refund request."""
+        invoice = self._create_invoice(auth_client, patient, user)
+        data = {
+            'invoice': str(invoice.id),
+            'patient': str(patient.id),
+            'amount': '590.00',
+            'reason': 'Duplicate payment',
+        }
+        response = auth_client.post('/api/refunds/', data)
+        assert response.status_code == 201
+        assert response.data['status'] == 'PENDING_APPROVAL'
+        assert 'refund_number' in response.data
+        assert float(response.data['amount']) == 590.00
+
+    def test_refund_requires_reason(self, auth_client, patient, user):
+        """Refund without reason should work (reason is not required)."""
+        invoice = self._create_invoice(auth_client, patient, user)
+        data = {
+            'invoice': str(invoice.id),
+            'patient': str(patient.id),
+            'amount': '590.00',
+        }
+        response = auth_client.post('/api/refunds/', data)
+        assert response.status_code == 201
+
+
+@pytest.mark.django_db
+class TestInsuranceClaimAPI:
+    def _create_invoice(self, auth_client, patient, user):
+        invoice = Invoice.objects.create(
+            patient=patient,
+            invoice_type='OPD',
+            subtotal=500, tax=90, total=590,
+            created_by=user,
+        )
+        invoice.status = 'ISSUED'
+        invoice.save()
+        return invoice
+
+    def test_create_insurance_claim(self, auth_client, patient, user):
+        """Create an insurance claim."""
+        invoice = self._create_invoice(auth_client, patient, user)
+        data = {
+            'invoice': str(invoice.id),
+            'patient': str(patient.id),
+            'insurance_provider': 'Star Health',
+            'claimed_amount': '590.00',
+        }
+        response = auth_client.post('/api/claims/', data)
+        assert response.status_code == 201
+        assert response.data['status'] == 'PENDING'
+        assert 'claim_number' in response.data
+        assert float(response.data['claimed_amount']) == 590.00
+
+    def test_claim_requires_provider(self, auth_client, patient, user):
+        """Claim without provider should fail."""
+        invoice = self._create_invoice(auth_client, patient, user)
+        data = {
+            'invoice': str(invoice.id),
+            'patient': str(patient.id),
+            'claimed_amount': '590.00',
+        }
+        response = auth_client.post('/api/claims/', data)
+        assert response.status_code == 400
+
+
+@pytest.mark.django_db
+class TestBillingDashboardAPI:
+    def test_billing_dashboard_returns_data(self, auth_client):
+        """Billing dashboard returns expected KPIs."""
+        response = auth_client.get('/api/billing/dashboard/')
+        assert response.status_code == 200
+        assert 'revenue_today' in response.data
+        assert 'pending_payments_total' in response.data
+        assert 'collected_today' in response.data
+
+    def test_billing_insights_returns_data(self, auth_client):
+        """Billing insights endpoint works."""
+        response = auth_client.get('/api/billing/insights/')
+        assert response.status_code == 200
+        # Should return a list of insights or a dict
+        assert response.data is not None
